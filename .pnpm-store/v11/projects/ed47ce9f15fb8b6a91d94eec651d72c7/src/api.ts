@@ -47,6 +47,6 @@ export async function loadDashboard(district: string, crimeHead: string) {
 }
 
 export async function getDistrictDrilldown(district: string) {
-  const result = await get(`/api/v1/district-drilldown?district=${encodeURIComponent(district)}`, { district, total_cases: 0, stations: [] });
+  const result = await get(`/api/v1/district-drilldown/${encodeURIComponent(district)}`, { district, total_cases: 0, stations: [] });
   return result;
 }

@@ -19,6 +19,8 @@ import pandas as pd
 PROJECT_ROOT = Path(__file__).resolve().parents[3]
 DEFAULT_CASE_PATH = PROJECT_ROOT / "data" / "synthetic" / "cases.csv"
 DEFAULT_LINK_PATH = PROJECT_ROOT / "data" / "synthetic" / "link_candidates.csv"
+DEFAULT_PUBLIC_PATH = PROJECT_ROOT / "data" / "processed" / "karnataka_monthly_aggregate.csv"
+DEFAULT_MODEL_PATH = PROJECT_ROOT / "data" / "models" / "risk_model.joblib"
 EVENT_LOG_PATH = PROJECT_ROOT / "logs" / "frontend_events.jsonl"
 event_logger = logging.getLogger("ksp_drishti.frontend")
 
@@ -46,6 +48,25 @@ def load_links() -> pd.DataFrame:
     if not path.exists():
         return pd.DataFrame()
     return pd.read_csv(path)
+
+
+@functools.lru_cache(maxsize=1)
+def load_public_data() -> pd.DataFrame:
+    """Load public aggregate crime data if available."""
+    path = Path(os.getenv("PUBLIC_DATA_PATH", str(DEFAULT_PUBLIC_PATH)))
+    if not path.exists():
+        return pd.DataFrame()
+    df = pd.read_csv(path)
+    if "period_start" in df.columns:
+        df["period_start"] = pd.to_datetime(df["period_start"])
+    return df
+
+
+def invalidate_cache() -> None:
+    """Clear all in-memory dataframe caches."""
+    load_cases.cache_clear()
+    load_links.cache_clear()
+    load_public_data.cache_clear()
 
 
 def _scope(cases: pd.DataFrame, district: str | None, crime_head: str | None) -> pd.DataFrame:
@@ -297,11 +318,95 @@ def district_drilldown(district: str) -> dict[str, Any]:
     }
 
 
+# ---------------------------------------------------------------------------
+# Data source indicator
+# ---------------------------------------------------------------------------
+
+def data_status() -> dict[str, Any]:
+    """Report what data sources are currently available."""
+    case_path = Path(os.getenv("DATA_PATH", str(DEFAULT_CASE_PATH)))
+    public_path = Path(os.getenv("PUBLIC_DATA_PATH", str(DEFAULT_PUBLIC_PATH)))
+    model_path = Path(os.getenv("MODEL_PATH", str(DEFAULT_MODEL_PATH)))
+    return {
+        "synthetic_data": case_path.exists(),
+        "public_aggregate_data": public_path.exists(),
+        "ml_model_trained": model_path.exists(),
+        "data_mode": "synthetic_demo",
+        "notice": "All FIR-style records are synthetic. Public aggregate data is from official Karnataka sources.",
+    }
+
+# ---------------------------------------------------------------------------
+# Public aggregate data endpoints
+# ---------------------------------------------------------------------------
+
+def public_overview() -> dict[str, Any]:
+    """Overview of public aggregate crime data."""
+    df = load_public_data()
+    if df.empty:
+        return {
+            "available": False,
+            "message": "No public aggregate data loaded. Download from Karnataka OGD or Kaggle and run import_public_aggregate.py.",
+        }
+    return {
+        "available": True,
+        "total_records": int(len(df)),
+        "districts": sorted(df["district"].unique().tolist()) if "district" in df.columns else [],
+        "date_range": {
+            "start": str(df["period_start"].min().date()) if "period_start" in df.columns else "N/A",
+            "end": str(df["period_start"].max().date()) if "period_start" in df.columns else "N/A",
+        },
+        "source": df["source_name"].iloc[0] if "source_name" in df.columns and len(df) > 0 else "Unknown",
+        "granularity": df["data_granularity"].iloc[0] if "data_granularity" in df.columns and len(df) > 0 else "Unknown",
+    }
+
+
+def public_trends() -> list[dict[str, Any]]:
+    """Monthly trends from public aggregate data."""
+    df = load_public_data()
+    if df.empty or "period_start" not in df.columns:
+        return []
+    monthly = (
+        df.groupby("period_start")["cases_reported"]
+        .sum()
+        .reset_index()
+        .sort_values("period_start")
+        .tail(24)
+    )
+    return [
+        {
+            "period": row["period_start"].strftime("%Y-%m"),
+            "cases_reported": int(row["cases_reported"]),
+            "source": "public_aggregate",
+        }
+        for _, row in monthly.iterrows()
+    ]
+
+
+def public_district_comparison() -> list[dict[str, Any]]:
+    """District-wise comparison from public data."""
+    df = load_public_data()
+    if df.empty or "district" not in df.columns:
+        return []
+    comparison = (
+        df.groupby("district")["cases_reported"]
+        .sum()
+        .reset_index()
+        .sort_values("cases_reported", ascending=False)
+    )
+    return comparison.to_dict(orient="records")
+
+
+# ---------------------------------------------------------------------------
+# Governance / audit
+# ---------------------------------------------------------------------------
+
 def audit_snapshot() -> list[dict[str, str]]:
     records = [
         ("model-risk-hgb-v1", "Model evaluation reviewed", "synthetic-demo"),
         ("link-5-11", "Candidate link opened for analyst review", "demo-analyst"),
         ("alert-h3-demo-0", "Alert viewed", "district-supervisor"),
+        ("data-import", "Public aggregate data imported", "data-pipeline"),
+        ("cache-refresh", "Analytics cache refreshed", "system"),
     ]
     previous = "GENESIS"
     output = []

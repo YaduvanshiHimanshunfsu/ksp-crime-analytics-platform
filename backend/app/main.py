@@ -14,10 +14,17 @@ from app.services import analytics
 
 logging.basicConfig(level=logging.INFO, format="%(asctime)s | %(levelname)s | %(name)s | %(message)s")
 
-app = FastAPI(title="KSP Drishti API", version="0.1.0", description="Synthetic-data challenge demonstration API")
+app = FastAPI(title="KSP Drishti API", version="0.2.0", description="AI-Driven Crime Analytics & Visualization Platform — Synthetic-data challenge demonstration API")
+
+# BUG-6 fix: include 127.0.0.1 and allow env-based origins
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["http://localhost:5173", "http://127.0.0.1:5173"],
+    allow_origins=[
+        "http://localhost:5173",
+        "http://127.0.0.1:5173",
+        "http://localhost:3000",
+        "http://127.0.0.1:3000",
+    ],
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
@@ -39,19 +46,19 @@ def health() -> dict[str, str]:
     return {"status": "ok", "data": "synthetic"}
 
 
-@app.get("/api/v1/source-status")
-def get_source_status():
-    return {"status": "live", "message": "Backend connected"}
+@app.get("/api/v1/data-status")
+def get_data_status():
+    """Report available data sources and current data mode."""
+    return analytics.data_status()
+
+# ---------------------------------------------------------------------------
+# Core analytics endpoints
+# ---------------------------------------------------------------------------
 
 
 @app.get("/api/v1/overview")
 def get_overview(district: str | None = None, crime_head: str | None = None):
     return analytics.overview(district, crime_head)
-
-
-@app.get("/api/v1/district-drilldown")
-def get_district_drilldown(district: str):
-    return analytics.district_drilldown(district)
 
 
 @app.get("/api/v1/hotspots")
@@ -99,6 +106,43 @@ def get_audit():
     return analytics.audit_snapshot()
 
 
+# ---------------------------------------------------------------------------
+# District drilldown
+# ---------------------------------------------------------------------------
+
+@app.get("/api/v1/district-drilldown/{district}")
+def get_district_drilldown(district: str):
+    """Detailed station-level breakdown for a specific district."""
+    return analytics.district_drilldown(district)
+
+
+# ---------------------------------------------------------------------------
+# Public aggregate data endpoints
+# ---------------------------------------------------------------------------
+
+@app.get("/api/v1/public-context/overview")
+def get_public_overview():
+    """Overview of public aggregate crime data availability."""
+    return analytics.public_overview()
+
+
+@app.get("/api/v1/public-context/trends")
+def get_public_trends():
+    """Monthly trends from public aggregate data."""
+    return analytics.public_trends()
+
+
+@app.get("/api/v1/public-context/districts")
+def get_public_districts():
+    """District-wise comparison from public data."""
+    return analytics.public_district_comparison()
+
+
+# ---------------------------------------------------------------------------
+# Feedback & telemetry
+# ---------------------------------------------------------------------------
+
+
 @app.post("/api/v1/alerts/{alert_id}/feedback")
 def submit_feedback(alert_id: str, feedback: AlertFeedback):
     if not alert_id.startswith("h3-demo-"):
@@ -114,3 +158,14 @@ def submit_feedback(alert_id: str, feedback: AlertFeedback):
 @app.post("/api/v1/telemetry")
 def record_telemetry(telemetry: FrontendTelemetry) -> dict[str, Any]:
     return analytics.record_frontend_event(telemetry.event, telemetry.details)
+
+
+# ---------------------------------------------------------------------------
+# Cache management
+# ---------------------------------------------------------------------------
+
+@app.post("/api/v1/cache/invalidate")
+def invalidate_cache():
+    """Clear the analytics data cache (useful after data regeneration)."""
+    analytics.invalidate_cache()
+    return {"status": "cache_cleared"}

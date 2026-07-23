@@ -1,4 +1,4 @@
-import { useEffect, useMemo, useRef, useState } from "react";
+import React, { Component, useEffect, useMemo, useRef, useState } from "react";
 import L from "leaflet";
 import { loadDashboard, logFrontendEvent, getDistrictDrilldown } from "./api";
 import KarnatakaMap from "./KarnatakaMap";
@@ -14,6 +14,29 @@ function riskColor(score: number) {
   if (score >= 85) return "#f16361";
   if (score >= 70) return "#f5b942";
   return "#45c9a3";
+}
+
+/* ── Error Boundary (BUG-13 fix) ── */
+class ErrorBoundary extends Component<{ children: React.ReactNode }, { hasError: boolean; error: string }> {
+  constructor(props: { children: React.ReactNode }) {
+    super(props);
+    this.state = { hasError: false, error: "" };
+  }
+  static getDerivedStateFromError(err: Error) {
+    return { hasError: true, error: err.message };
+  }
+  render() {
+    if (this.state.hasError)
+      return (
+        <main className="error-boundary" style={{ padding: '2rem', color: '#f16361' }}>
+          <div className="brand-mark" style={{ marginBottom: '1rem', width: '3rem', height: '3rem', fontSize: '2rem' }}>!</div>
+          <h2>Something went wrong</h2>
+          <p>{this.state.error}</p>
+          <button className="primary" style={{ marginTop: '1rem', width: 'auto' }} onClick={() => window.location.reload()}>Reload dashboard</button>
+        </main>
+      );
+    return this.props.children;
+  }
 }
 
 function MetricCard({ label, value, note, tone = "default" }: { label: string; value: string; note: string; tone?: "default" | "attention" | "positive" }) {
@@ -67,7 +90,7 @@ function App() {
   if (!data) return <main className="loading"><div className="loader" /> Loading KSP Dṛṣṭi…</main>;
 
   const confidence = selectedAlert?.confidence ?? "Review required";
-  return <main className="app-shell">
+  return <ErrorBoundary><main className="app-shell">
     <header className="topbar"><div className="brand"><div className="brand-mark">D</div><div><small>KARNATAKA STATE POLICE · SYNTHETIC DEMO</small><h1>KSP Dṛṣṭi</h1></div></div>
       <div className="topbar-actions"><span className="status-pill"><i /> analyst-reviewed intelligence</span><button className="profile">SP <span>⌄</span></button></div></header>
     {!data.isLive && <div className="offline-banner">Live backend disconnected. Showing offline mock data.</div>}
@@ -109,7 +132,7 @@ function App() {
     {view === "Risk forecast" && <section className="workspace"><div className="workspace-heading"><div><p className="eyebrow">PREDICTIVE RISK SCORING</p><h2>Forecast reported incident volume</h2><p>Forecasts are location/category estimates with ranges. They are not instructions to target a person or community.</p></div><span className="guardrail">Advisory only</span></div><div className="forecast-layout"><article className="panel forecast-table"><div className="forecast-head"><span>Area</span><span>Crime type</span><span>Next 7 days</span><span>Risk</span></div>{data.currentForecasts.map((forecast) => <button className="forecast-row" key={`${forecast.area}-${forecast.crime_head}`} onClick={() => setSelectedAlert(data.currentAlerts.find((alert) => alert.title.includes(forecast.area)) ?? null)}><b>{forecast.area}<small>{forecast.district}</small></b><span>{forecast.crime_head}</span><span>{forecast.next_week_range[0]}–{forecast.next_week_range[1]} reports</span><strong style={{ color: riskColor(forecast.risk_score) }}>{forecast.risk_score}</strong></button>)}</article><article className="panel explain-panel"><p className="eyebrow">FORECAST EXPLANATION</p><h3>What moved this estimate</h3><ol>{(data.currentForecasts[0]?.drivers ?? []).map((driver) => <li key={driver}>{driver}</li>)}</ol><div className="credibility"><p className="eyebrow">MODEL SAFEGUARDS</p><div><span>Prediction target</span><b>Reported incidents</b></div><div><span>Arrest/chargesheet features</span><b>Excluded</b></div><div><span>Confidence output</span><b>Range, not certainty</b></div></div></article></div><section className="correlation-section"><p className="eyebrow">SOCIO-ECONOMIC AND CONTEXTUAL ASSOCIATIONS</p>{data.currentCorrelations.map((item) => <article className="correlation-card" key={item.factor}><h3>{item.factor}</h3><p>{item.finding}</p><small>{item.caveat}</small></article>)}</section></section>}
 
     {view === "Governance" && <section className="workspace"><div className="workspace-heading"><div><p className="eyebrow">GOVERNANCE AND AUDIT</p><h2>Trust must be visible, not assumed</h2><p>Access boundaries, model limitations, and analyst decisions are part of the product.</p></div><span className="guardrail">On-premise ready</span></div><div className="governance-grid"><article className="panel"><p className="eyebrow">MODEL CARD</p><h3>risk-hgb-v1</h3><dl><dt>Purpose</dt><dd>Forecast reported incidents by place and crime category.</dd><dt>Prohibited use</dt><dd>Individual risk scoring, arrest decisions, automated deployment.</dd><dt>Training rule</dt><dd>Chronological splits; reported/citizen sources only.</dd><dt>Promotion rule</dt><dd>Human approval after baseline and calibration review.</dd></dl></article><article className="panel"><p className="eyebrow">ROLE-BASED ACCESS</p><div className="role-row"><b>SHO</b><span>Own station analytics and assigned review queue</span></div><div className="role-row"><b>SP</b><span>District aggregates and station drilldowns</span></div><div className="role-row"><b>SCRB HQ</b><span>State-level aggregates and governance audit</span></div></article><article className="panel"><p className="eyebrow">INTEGRITY LOG</p><div className="hash-item"><span>GENESIS</span><b>→ 7a24f1a8…</b></div><div className="hash-item"><span>Link review opened</span><b>→ cd9e52bf…</b></div><div className="hash-item"><span>Alert viewed</span><b>→ 12f6a8c1…</b></div><small>Demonstration of a verifiable event chain; production requires append-only storage.</small></article></div></section>}
-  </main>;
+  </main></ErrorBoundary>;
 }
 
 export default App;
