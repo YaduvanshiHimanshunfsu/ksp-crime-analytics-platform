@@ -3,7 +3,10 @@
 from __future__ import annotations
 
 import hashlib
+import json
+import logging
 import os
+from datetime import datetime, timezone
 from pathlib import Path
 from typing import Any
 
@@ -14,6 +17,8 @@ import pandas as pd
 PROJECT_ROOT = Path(__file__).resolve().parents[3]
 DEFAULT_CASE_PATH = PROJECT_ROOT / "data" / "synthetic" / "cases.csv"
 DEFAULT_LINK_PATH = PROJECT_ROOT / "data" / "synthetic" / "link_candidates.csv"
+EVENT_LOG_PATH = PROJECT_ROOT / "logs" / "frontend_events.jsonl"
+event_logger = logging.getLogger("ksp_drishti.frontend")
 
 
 def _read_csv(path: Path) -> pd.DataFrame:
@@ -206,7 +211,9 @@ def repeat_patterns() -> list[dict[str, Any]]:
 def correlations(district: str | None = None, crime_head: str | None = None) -> list[dict[str, Any]]:
     cases = _scope(load_cases(), district, crime_head)
     festival = cases.groupby("festival_day").size()
-    rainfall = cases.groupby(pd.cut(cases["rainfall_index"], [-0.1, 0.3, 0.7, 1.1])).size()
+    rainfall = cases.groupby(
+        pd.cut(cases["rainfall_index"], [-0.1, 0.3, 0.7, 1.1]), observed=False
+    ).size()
     festival_lift = round(((festival.get(1, 0) / max(festival.get(0, 1), 1)) * 100) - 100, 1)
     wet_count = int(rainfall.iloc[-1]) if len(rainfall) else 0
     return [
@@ -229,3 +236,23 @@ def audit_snapshot() -> list[dict[str, str]]:
         output.append({"event_id": event_id, "action": action, "actor": actor, "previous_hash": previous, "hash": entry_hash})
         previous = entry_hash
     return output
+
+
+def record_frontend_event(event: str, details: dict[str, Any]) -> dict[str, Any]:
+    """Persist non-sensitive UI telemetry for the terminal launcher and audit demo.
+
+    The function intentionally logs only UI state, never raw FIR records or
+    names. In a production deployment this would be routed to a protected,
+    retention-controlled audit store.
+    """
+    record = {
+        "timestamp": datetime.now(timezone.utc).isoformat(),
+        "event": event,
+        "details": details,
+        "data_classification": "synthetic-demo-ui-telemetry",
+    }
+    EVENT_LOG_PATH.parent.mkdir(parents=True, exist_ok=True)
+    with EVENT_LOG_PATH.open("a", encoding="utf-8") as handle:
+        handle.write(json.dumps(record, ensure_ascii=False) + "\n")
+    event_logger.info("FRONTEND_EVENT event=%s details=%s", event, details)
+    return record

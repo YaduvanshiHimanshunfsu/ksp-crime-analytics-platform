@@ -2,12 +2,17 @@
 
 from __future__ import annotations
 
-from fastapi import FastAPI, HTTPException, Query
+import logging
+from typing import Any
+
+from fastapi import FastAPI, HTTPException
 from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel, Field
 
 from app.services import analytics
 
+
+logging.basicConfig(level=logging.INFO, format="%(asctime)s | %(levelname)s | %(name)s | %(message)s")
 
 app = FastAPI(title="KSP Drishti API", version="0.1.0", description="Synthetic-data challenge demonstration API")
 app.add_middleware(
@@ -22,6 +27,11 @@ app.add_middleware(
 class AlertFeedback(BaseModel):
     useful: bool
     reason: str = Field(min_length=3, max_length=280)
+
+
+class FrontendTelemetry(BaseModel):
+    event: str = Field(min_length=3, max_length=80, pattern=r"^[a-z0-9_\-]+$")
+    details: dict[str, str | int | float | bool] = Field(default_factory=dict)
 
 
 @app.get("/health")
@@ -89,3 +99,8 @@ def submit_feedback(alert_id: str, feedback: AlertFeedback):
         "message": "Feedback stored for review quality. It does not automatically retrain the forecast model.",
         "feedback": feedback.model_dump(),
     }
+
+
+@app.post("/api/v1/telemetry")
+def record_telemetry(telemetry: FrontendTelemetry) -> dict[str, Any]:
+    return analytics.record_frontend_event(telemetry.event, telemetry.details)

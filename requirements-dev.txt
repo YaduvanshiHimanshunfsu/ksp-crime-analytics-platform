@@ -1,0 +1,2 @@
+# Development-only verification tools. The production launcher does not install these.
+pytest==8.3.4

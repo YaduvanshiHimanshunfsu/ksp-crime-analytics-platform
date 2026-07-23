@@ -3,6 +3,14 @@ import type { Alert, Correlation, Forecast, Hotspot, Link, Network, Overview, Re
 
 const API_ROOT = import.meta.env.VITE_API_URL ?? "http://localhost:8000";
 
+export function logFrontendEvent(event: string, details: Record<string, string | number | boolean> = {}) {
+  void fetch(`${API_ROOT}/api/v1/telemetry`, {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({ event, details }),
+  }).catch(() => undefined);
+}
+
 async function get<T>(path: string, fallback: T): Promise<T> {
   try {
     const response = await fetch(`${API_ROOT}${path}`);
@@ -25,4 +33,3 @@ export async function loadDashboard(district: string, crimeHead: string) {
   ]);
   return { summary, mapHotspots, chartTrends, currentAlerts, currentForecasts, currentLinks, currentNetwork, currentCorrelations, patterns };
 }
-
