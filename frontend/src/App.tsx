@@ -1,5 +1,7 @@
-import { useEffect, useMemo, useState } from "react";
-import { loadDashboard, logFrontendEvent } from "./api";
+import { useEffect, useMemo, useRef, useState } from "react";
+import L from "leaflet";
+import { loadDashboard, logFrontendEvent, getDistrictDrilldown } from "./api";
+import type { Alert, Hotspot, Network, Trend, DistrictDrilldown } from "./types";
 import type { Alert, Hotspot, Network, Trend } from "./types";
 
 type DashboardData = Awaited<ReturnType<typeof loadDashboard>>;
@@ -30,35 +32,42 @@ function TrendChart({ points }: { points: Trend[] }) {
   </svg><div className="chart-axis"><span>{points[0].week.slice(5)}</span><span>Latest week</span></div></div>;
 }
 
-function hexPoints(x: number, y: number, size: number) {
-  return Array.from({ length: 6 }, (_, index) => {
-    const angle = (Math.PI / 3) * index + Math.PI / 6;
-    return `${x + size * Math.cos(angle)},${y + size * Math.sin(angle)}`;
-  }).join(" ");
-}
-
 function IntelligenceMap({ hotspots, selected, onSelect }: { hotspots: Hotspot[]; selected: Alert | null; onSelect: (hotspot: Hotspot) => void }) {
-  const bounds = useMemo(() => {
-    const lats = hotspots.map((item) => item.latitude); const lons = hotspots.map((item) => item.longitude);
-    return { minLat: Math.min(...lats, 0), maxLat: Math.max(...lats, 1), minLon: Math.min(...lons, 0), maxLon: Math.max(...lons, 1) };
-  }, [hotspots]);
-  const position = (spot: Hotspot) => ({
-    x: 90 + ((spot.longitude - bounds.minLon) / Math.max(bounds.maxLon - bounds.minLon, 0.1)) * 520,
-    y: 300 - ((spot.latitude - bounds.minLat) / Math.max(bounds.maxLat - bounds.minLat, 0.1)) * 230,
-  });
-  return <div className="map-frame">
-    <div className="map-caption"><span className="live-dot" /> H3-style risk cells · synthetic map layer</div>
-    <svg viewBox="0 0 720 360" className="intelligence-map" role="img" aria-label="Risk cells by station">
-      <path d="M95 68 L220 45 L375 72 L579 57 L651 150 L610 302 L415 328 L252 298 L114 247 Z" className="state-shape" />
-      <path d="M150 116 L560 246 M215 70 L405 328 M476 71 L315 300" className="district-lines" />
-      {hotspots.map((spot) => { const p = position(spot); return <g key={spot.id} className="hotspot" onClick={() => onSelect(spot)}>
-        <polygon points={hexPoints(p.x, p.y, 28 + spot.risk_score / 13)} fill={riskColor(spot.risk_score)} opacity=".22" />
-        <polygon points={hexPoints(p.x, p.y, 14 + spot.risk_score / 30)} fill={riskColor(spot.risk_score)} opacity=".92" />
-        <text x={p.x} y={p.y + 42} textAnchor="middle">{spot.station}</text>
-      </g>; })}
-    </svg>
-    <div className="map-legend"><span><i className="legend-low" /> monitored</span><span><i className="legend-mid" /> review</span><span><i className="legend-high" /> elevated</span></div>
-    {selected && <div className="map-selection"><b>{selected.title}</b><span>{selected.confidence}</span></div>}
+  const mapRef = useRef<HTMLDivElement>(null);
+  const leafletRef = useRef<L.Map | null>(null);
+
+  useEffect(() => {
+    if (!mapRef.current) return;
+    if (!leafletRef.current) {
+      leafletRef.current = L.map(mapRef.current).setView([15.3173, 75.7139], 6);
+      L.tileLayer('https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png', {
+        attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors &copy; <a href="https://carto.com/attributions">CARTO</a>',
+        subdomains: 'abcd',
+        maxZoom: 20
+      }).addTo(leafletRef.current);
+    }
+    const map = leafletRef.current;
+    
+    map.eachLayer((layer) => {
+      if (layer instanceof L.CircleMarker) map.removeLayer(layer);
+    });
+
+    hotspots.forEach(spot => {
+      L.circleMarker([spot.latitude, spot.longitude], {
+        radius: 6 + spot.risk_score / 15,
+        color: riskColor(spot.risk_score),
+        fillColor: riskColor(spot.risk_score),
+        fillOpacity: 0.5,
+        weight: 1
+      }).bindTooltip(`${spot.station} (${spot.district})<br>Risk: ${spot.risk_score}<br>Cases: ${spot.incidents_28d}`)
+        .on('click', () => onSelect(spot))
+        .addTo(map);
+    });
+  }, [hotspots, onSelect]);
+
+  return <div className="map-frame" style={{ position: "relative" }}>
+    <div ref={mapRef} style={{ height: "420px", width: "100%", borderRadius: "8px", background: "#0a0a0a" }} />
+    <div className="map-legend"><span><i className="legend-low" /> monitored</span><span><i className="legend-high" style={{ background: "#f16361" }}/> elevated</span></div>
   </div>;
 }
 
@@ -81,10 +90,17 @@ function App() {
   const [data, setData] = useState<DashboardData | null>(null);
   const [selectedAlert, setSelectedAlert] = useState<Alert | null>(null);
   const [feedback, setFeedback] = useState<string>("");
+  const [drilldown, setDrilldown] = useState<DistrictDrilldown | null>(null);
 
   useEffect(() => {
     loadDashboard(district, crimeHead).then((bundle) => { setData(bundle); setSelectedAlert(bundle.currentAlerts[0] ?? null); });
     logFrontendEvent("dashboard_filter_changed", { district, crime_head: crimeHead });
+    
+    if (district !== "All Karnataka") {
+      getDistrictDrilldown(district).then(res => setDrilldown(res.data));
+    } else {
+      setDrilldown(null);
+    }
   }, [district, crimeHead]);
   if (!data) return <main className="loading"><div className="loader" /> Loading KSP Dṛṣṭi…</main>;
 
@@ -92,6 +108,7 @@ function App() {
   return <main className="app-shell">
     <header className="topbar"><div className="brand"><div className="brand-mark">D</div><div><small>KARNATAKA STATE POLICE · SYNTHETIC DEMO</small><h1>KSP Dṛṣṭi</h1></div></div>
       <div className="topbar-actions"><span className="status-pill"><i /> analyst-reviewed intelligence</span><button className="profile">SP <span>⌄</span></button></div></header>
+    {!data.isLive && <div className="offline-banner">Live backend disconnected. Showing offline mock data.</div>}
     <section className="notice"><b>Demonstration data only.</b> {data.summary.synthetic_notice}</section>
     <section className="controlbar"><div className="view-tabs">{(["Command map", "CaseLink", "Risk forecast", "Governance"] as View[]).map((item) => <button key={item} className={view === item ? "active" : ""} onClick={() => { setView(item); logFrontendEvent("view_changed", { view: item }); }}>{item}</button>)}</div>
       <div className="filters"><label>District<select value={district} onChange={(event) => setDistrict(event.target.value)}>{districts.map((item) => <option key={item}>{item}</option>)}</select></label><label>Crime type<select value={crimeHead} onChange={(event) => setCrimeHead(event.target.value)}>{crimeHeads.map((item) => <option key={item}>{item}</option>)}</select></label></div>
@@ -101,7 +118,28 @@ function App() {
       <aside className="left-rail"><p className="eyebrow">STATE SITUATION</p><MetricCard label="Reported cases" value={data.summary.total_cases.toLocaleString()} note="selected synthetic dataset" /><MetricCard label="Last 28 days" value={data.summary.last_28_days.toString()} note={`${data.summary.change_percent >= 0 ? "+" : ""}${data.summary.change_percent}% vs prior 28 days`} tone={data.summary.change_percent > 0 ? "attention" : "positive"} /><MetricCard label="Active review alerts" value={data.summary.active_alerts.toString()} note="advisory only" />
         <div className="layer-control"><p className="eyebrow">MAP LAYERS</p><label><input type="checkbox" defaultChecked /> Credibility-scored hotspots</label><label><input type="checkbox" defaultChecked /> Trend anomalies</label><label><input type="checkbox" /> Reviewed case density</label></div></aside>
       <section className="map-column"><div className="section-heading"><div><p className="eyebrow">PLACE-BASED INTELLIGENCE</p><h2>Where reported patterns need attention</h2></div><span className="date-pill">Data through {data.summary.latest_data_date}</span></div><IntelligenceMap hotspots={data.mapHotspots} selected={selectedAlert} onSelect={(spot) => { setSelectedAlert(data.currentAlerts.find((alert) => alert.id === spot.id) ?? null); logFrontendEvent("hotspot_selected", { hotspot_id: spot.id, station: spot.station, district: spot.district }); }} /><article className="panel trend-panel"><div className="panel-title"><div><p className="eyebrow">TREND AND ANOMALY DETECTION</p><h3>Weekly reported incidents</h3></div><span className="legend-line">Observed <i /> Expected</span></div><TrendChart points={data.chartTrends} /></article></section>
-      <aside className="right-rail"><div className="panel-title"><div><p className="eyebrow">INTELLIGENCE CARD</p><h3>{selectedAlert?.title ?? "Select a risk cell"}</h3></div><span className={`confidence ${confidence === "High" ? "high" : "review"}`}>{confidence}</span></div>{selectedAlert && <><div className="score-row"><strong style={{ color: riskColor(selectedAlert.risk_score) }}>{selectedAlert.risk_score}</strong><span>place risk<br />indicator</span></div><p className="alert-reason">{selectedAlert.reason}</p><div className="credibility"><p className="eyebrow">DATA CREDIBILITY LENS</p><div><span>Reported/citizen source</span><b>{selectedAlert.credibility.reported_source_share}%</b></div><div><span>Geographic completeness</span><b>{selectedAlert.credibility.geo_complete}%</b></div><div><span>Decision state</span><b>Human review</b></div></div><button className="primary" onClick={() => { setFeedback("Marked useful - stored for alert-quality review."); logFrontendEvent("alert_marked_useful", { alert_id: selectedAlert.id }); }}>Mark useful</button>{feedback && <p className="feedback">{feedback}</p>}</>}</aside>
+      <aside className="right-rail"><div className="panel-title"><div><p className="eyebrow">INTELLIGENCE CARD</p><h3>{selectedAlert?.title ?? "Select a risk cell"}</h3></div><span className={`confidence ${confidence === "High" ? "high" : "review"}`}>{confidence}</span></div>{selectedAlert && <><div className="score-row"><strong style={{ color: riskColor(selectedAlert.risk_score) }}>{selectedAlert.risk_score}</strong><span>place risk<br />indicator</span></div><p className="alert-reason">{selectedAlert.reason}</p><div className="credibility"><p className="eyebrow">DATA CREDIBILITY LENS</p><div><span>Reported/citizen source</span><b>{selectedAlert.credibility.reported_source_share}%</b></div><div><span>Geographic completeness</span><b>{selectedAlert.credibility.geo_complete}%</b></div><div><span>Decision state</span><b>Human review</b></div></div><button className="primary" onClick={() => { setFeedback("Marked useful - stored for alert-quality review."); logFrontendEvent("alert_marked_useful", { alert_id: selectedAlert.id }); }}>Mark useful</button>{feedback && <p className="feedback">{feedback}</p>}</>}
+        {drilldown && (
+          <div className="drilldown-panel">
+            <p className="eyebrow" style={{ marginTop: "2rem" }}>DISTRICT DRILLDOWN</p>
+            <h3 style={{ margin: "4px 0 16px 0", fontSize: "1.2rem", fontWeight: "600" }}>{drilldown.district}</h3>
+            <div className="drilldown-list" style={{ display: "flex", flexDirection: "column", gap: "12px" }}>
+              {drilldown.stations.slice(0, 6).map(st => (
+                <div key={st.station} className="drilldown-item" style={{ background: "rgba(255,255,255,0.04)", padding: "12px", borderRadius: "6px", borderLeft: "3px solid #165688" }}>
+                  <div style={{ display: "flex", justifyContent: "space-between", marginBottom: "6px" }}>
+                    <b style={{ color: "#d2d8e0", fontSize: "1rem" }}>{st.station}</b>
+                    <span style={{ background: "rgba(255,255,255,0.1)", padding: "2px 8px", borderRadius: "12px", fontSize: "0.85rem", color: "#a5b4cb" }}>{st.total_cases} cases</span>
+                  </div>
+                  <div style={{ display: "flex", justifyContent: "space-between", fontSize: "0.85rem", color: "#8b949e" }}>
+                    <span style={{ overflow: "hidden", textOverflow: "ellipsis", whiteSpace: "nowrap", maxWidth: "60%" }}>Top: {st.top_crime}</span>
+                    <span>Recent 28d: <strong>{st.recent_cases}</strong></span>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        )}
+      </aside>
     </section>}
 
     {view === "CaseLink" && <section className="workspace"><div className="workspace-heading"><div><p className="eyebrow">NETWORK AND LINK ANALYSIS</p><h2>Cross-station case evidence</h2><p>Candidate links are explainable and need an analyst decision before they become part of a case history.</p></div><span className="guardrail">No automatic merge</span></div><div className="case-grid"><article className="panel"><NetworkView network={data.currentNetwork} /></article><article className="panel review-panel"><p className="eyebrow">ANALYST REVIEW QUEUE</p>{data.currentLinks.slice(0, 4).map((link) => <div className="link-row" key={`${link.left_case_id}-${link.right_case_id}`}><div><b>Case {link.left_case_id} ↔ Case {link.right_case_id}</b><span>{link.left_district} · {link.right_district}</span></div><strong>{link.confidence}%</strong><small>Name {Math.round(link.name_similarity * 100)}% · age gap {link.age_gap} · MO {link.same_modus_operandi ? "matches" : "differs"}</small><div className="review-actions"><button>Confirm</button><button>Reject</button><button>Defer</button></div></div>)}</article></div><article className="panel repeat-panel"><div className="panel-title"><div><p className="eyebrow">REPEAT CASE-HISTORY TRACKING</p><h3>Reviewed entity timelines</h3></div><span className="guardrail">No person risk score</span></div>{data.patterns.map((pattern) => <div className="pattern-row" key={pattern.entity}><b>{pattern.entity}</b><span>{pattern.case_count} linked cases</span><span>{pattern.districts.join(" · ")}</span><span>{pattern.crime_heads.join(", ")}</span><small>Last seen {pattern.last_seen}</small></div>)}</article></section>}

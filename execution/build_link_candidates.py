@@ -10,6 +10,9 @@ from itertools import combinations
 from pathlib import Path
 
 
+PROJECT_ROOT = Path(__file__).resolve().parents[1]
+
+
 def similarity(left: str, right: str) -> float:
     return round(SequenceMatcher(None, left.lower(), right.lower()).ratio(), 3)
 
@@ -62,8 +65,8 @@ def candidates(rows: list[dict[str, str]]) -> list[dict[str, object]]:
 
 def main() -> None:
     parser = argparse.ArgumentParser()
-    parser.add_argument("--input", default="data/synthetic/cases.csv")
-    parser.add_argument("--output", default="data/synthetic/link_candidates.csv")
+    parser.add_argument("--input", default=str(PROJECT_ROOT / "data" / "synthetic" / "cases.csv"))
+    parser.add_argument("--output", default=str(PROJECT_ROOT / "data" / "synthetic" / "link_candidates.csv"))
     args = parser.parse_args()
     with Path(args.input).open(encoding="utf-8") as handle:
         rows = list(csv.DictReader(handle))

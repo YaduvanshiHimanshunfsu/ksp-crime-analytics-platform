@@ -64,3 +64,14 @@ export type Overview = {
 export type Correlation = { factor: string; finding: string; caveat: string };
 export type RepeatPattern = { entity: string; case_count: number; districts: string[]; crime_heads: string[]; last_seen: string; status: string };
 
+export type DistrictDrilldown = {
+  district: string;
+  total_cases: number;
+  stations: { station: string; total_cases: number; top_crime: string; recent_cases: number }[];
+};
+
+export type SourceStatus = {
+  status: string;
+  message: string;
+};
+

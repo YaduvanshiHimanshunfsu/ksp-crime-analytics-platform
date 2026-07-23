@@ -11,6 +11,9 @@ import json
 import os
 from pathlib import Path
 
+
+PROJECT_ROOT = Path(__file__).resolve().parents[1]
+
 # Avoid joblib's physical-core probe warning in restricted or virtualised
 # environments such as Colab and the hackathon workstation.
 os.environ.setdefault("LOKY_MAX_CPU_COUNT", "2")
@@ -56,12 +59,12 @@ def make_features(cases: pd.DataFrame) -> pd.DataFrame:
 
 def main() -> None:
     parser = argparse.ArgumentParser()
-    parser.add_argument("--input", default="data/synthetic/cases.csv")
-    parser.add_argument("--model-out", default="data/models/risk_model.joblib")
-    parser.add_argument("--metrics-out", default="data/models/risk_model_metrics.json")
+    parser.add_argument("--input", default=str(PROJECT_ROOT / "data" / "synthetic" / "cases.csv"))
+    parser.add_argument("--model-out", default=str(PROJECT_ROOT / "data" / "models" / "risk_model.joblib"))
+    parser.add_argument("--metrics-out", default=str(PROJECT_ROOT / "data" / "models" / "risk_model_metrics.json"))
     args = parser.parse_args()
     features = make_features(pd.read_csv(args.input))
-    cutoff = features["date"].quantile(0.80)
+    cutoff = pd.Timestamp(features["date"].quantile(0.80))
     train, test = features[features["date"] < cutoff], features[features["date"] >= cutoff]
     model = HistGradientBoostingRegressor(max_iter=180, learning_rate=0.06, l2_regularization=0.5, random_state=42)
     model.fit(train[FEATURES], train["target"])

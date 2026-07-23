@@ -17,7 +17,7 @@ logging.basicConfig(level=logging.INFO, format="%(asctime)s | %(levelname)s | %(
 app = FastAPI(title="KSP Drishti API", version="0.1.0", description="Synthetic-data challenge demonstration API")
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["http://localhost:5173"],
+    allow_origins=["http://localhost:5173", "http://127.0.0.1:5173"],
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
@@ -39,9 +39,19 @@ def health() -> dict[str, str]:
     return {"status": "ok", "data": "synthetic"}
 
 
+@app.get("/api/v1/source-status")
+def get_source_status():
+    return {"status": "live", "message": "Backend connected"}
+
+
 @app.get("/api/v1/overview")
 def get_overview(district: str | None = None, crime_head: str | None = None):
     return analytics.overview(district, crime_head)
+
+
+@app.get("/api/v1/district-drilldown")
+def get_district_drilldown(district: str):
+    return analytics.district_drilldown(district)
 
 
 @app.get("/api/v1/hotspots")

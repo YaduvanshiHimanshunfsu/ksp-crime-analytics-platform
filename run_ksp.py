@@ -107,9 +107,13 @@ class KspLauncher:
             raise RuntimeError("Node package manager not found. Install Node.js 20+ with npm or pnpm, then rerun.")
         if Path(package_manager).stem.lower().startswith("pnpm"):
             command = [package_manager, "--dir", "frontend", "install"]
+            command_cwd = ROOT
         else:
-            command = [package_manager, "--prefix", "frontend", "install"]
-        self.run_command(command, "Install frontend dependencies")
+            # `npm --prefix frontend install` is unreliable with some Windows
+            # npm shims and can look for ROOT/package.json. Run in frontend.
+            command = [package_manager, "install"]
+            command_cwd = ROOT / "frontend"
+        self.run_command(command, "Install frontend dependencies", cwd=command_cwd)
 
     def prepare_data(self) -> None:
         self.run_command([str(self.venv_python), "execution/run_demo_pipeline.py"], "Generate, validate, and link synthetic data")
@@ -123,12 +127,12 @@ class KspLauncher:
             if line:
                 self.logger.info("[%s] %s", label, line)
 
-    def start_process(self, command: list[str], label: str) -> subprocess.Popen[str]:
+    def start_process(self, command: list[str], label: str, cwd: Path = ROOT) -> subprocess.Popen[str]:
         env = dict(os.environ)
         env["CI"] = "true"  # prevent package managers from prompting in the child process
         self.info(f"Starting {label}: {' '.join(command)}")
         process = subprocess.Popen(
-            command, cwd=ROOT, text=True, stdout=subprocess.PIPE, stderr=subprocess.STDOUT, env=env,
+            command, cwd=cwd, text=True, stdout=subprocess.PIPE, stderr=subprocess.STDOUT, env=env,
         )
         self.processes.append(process)
         threading.Thread(target=self._stream_output, args=(process, label), daemon=True).start()
@@ -170,9 +174,11 @@ class KspLauncher:
             raise RuntimeError("Node package manager not found.")
         if Path(package_manager).stem.lower().startswith("pnpm"):
             frontend_command = [package_manager, "--dir", "frontend", "dev", "--host", "127.0.0.1"]
+            frontend_cwd = ROOT
         else:
-            frontend_command = [package_manager, "--prefix", "frontend", "run", "dev", "--", "--host", "127.0.0.1"]
-        self.start_process(frontend_command, "frontend")
+            frontend_command = [package_manager, "run", "dev", "--", "--host", "127.0.0.1"]
+            frontend_cwd = ROOT / "frontend"
+        self.start_process(frontend_command, "frontend", cwd=frontend_cwd)
         self.wait_for_url(FRONTEND_URL, "Frontend dashboard")
         print(colour(f"\nDashboard: {FRONTEND_URL}", "green"))
         print(colour(f"API docs:  {BACKEND_URL}/docs", "green"))

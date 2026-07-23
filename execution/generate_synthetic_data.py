@@ -16,6 +16,8 @@ from pathlib import Path
 from typing import Iterable
 
 
+PROJECT_ROOT = Path(__file__).resolve().parents[1]
+
 DISTRICTS = {
     "Bengaluru Urban": (12.9716, 77.5946),
     "Mysuru": (12.2958, 76.6394),
@@ -109,6 +111,9 @@ def make_cases(seed: int, start: date, end: date) -> list[dict[str, object]]:
                         "gender": "M" if rng.random() < 0.78 else "F",
                         "festival_day": int(festival_uplift > 1),
                         "rainfall_index": round(rng.uniform(0.2, 1.0) if current.month in (6, 7, 8, 9) else rng.uniform(0.0, 0.35), 2),
+                        "literacy_index": round(rng.uniform(0.70, 0.95), 2),
+                        "urbanization_index": round(rng.uniform(0.40, 0.98), 2),
+                        "population_density": rng.randint(200, 4500),
                     }
                 )
                 case_id += 1
@@ -125,7 +130,7 @@ def write_csv(rows: list[dict[str, object]], output: Path) -> None:
 
 def main() -> None:
     parser = argparse.ArgumentParser()
-    parser.add_argument("--output", default="data/synthetic/cases.csv")
+    parser.add_argument("--output", default=str(PROJECT_ROOT / "data" / "synthetic" / "cases.csv"))
     parser.add_argument("--seed", type=int, default=20260723)
     parser.add_argument("--start", default="2025-07-01")
     parser.add_argument("--end", default="2026-07-22")
