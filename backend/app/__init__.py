@@ -1,0 +1,2 @@
+"""KSP Drishti FastAPI application."""
+
