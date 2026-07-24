@@ -19,6 +19,7 @@ def main() -> None:
     run("generate_synthetic_data.py")
     run("validate_dataset.py")
     run("build_link_candidates.py")
+    run("process_public_data.py")
     print("\nDemo data pipeline completed. Optional model training requires backend/requirements.txt or Colab packages.")
 
 

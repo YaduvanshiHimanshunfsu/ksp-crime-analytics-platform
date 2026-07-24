@@ -115,6 +115,34 @@ class KspLauncher:
             command_cwd = ROOT / "frontend"
         self.run_command(command, "Install frontend dependencies", cwd=command_cwd)
 
+    def run_tests(self) -> None:
+        self.info("Installing test dependencies...")
+        self.run_command([str(self.venv_python), "-m", "pip", "install", "-r", "requirements-dev.txt"], "Install backend test dependencies")
+        
+        self.info("Running backend tests (pytest)...")
+        env = dict(os.environ)
+        env["PYTHONPATH"] = str(ROOT / "backend")
+        completed_backend = subprocess.run([str(self.venv_python), "-m", "pytest", "tests/", "-v"], cwd=ROOT, env=env, text=True)
+        if completed_backend.returncode != 0:
+            raise RuntimeError(f"Backend tests failed with exit code {completed_backend.returncode}.")
+        
+        self.info("Running frontend tests (vitest)...")
+        package_manager = shutil.which("pnpm") or shutil.which("npm")
+        if package_manager:
+            if Path(package_manager).stem.lower().startswith("pnpm"):
+                cmd = [package_manager, "--dir", "frontend", "test", "run"]
+                cwd = ROOT
+            else:
+                npx = shutil.which("npx")
+                if not npx:
+                    raise RuntimeError("npx not found, cannot run frontend tests.")
+                cmd = [npx, "vitest", "run"]
+                cwd = ROOT / "frontend"
+            completed_frontend = subprocess.run(cmd, cwd=cwd, text=True)
+            if completed_frontend.returncode != 0:
+                raise RuntimeError(f"Frontend tests failed with exit code {completed_frontend.returncode}.")
+        self.info("All tests passed successfully.")
+
     def prepare_data(self) -> None:
         self.run_command([str(self.venv_python), "execution/run_demo_pipeline.py"], "Generate, validate, and link synthetic data")
         if self.args.train or self.ask("Train the optional CPU risk model now?", default=False):
@@ -202,7 +230,13 @@ class KspLauncher:
         self.info("Launcher initialised. Every service action will be mirrored to this terminal and the runtime log.")
         self.ensure_dependencies()
         self.prepare_data()
-        if self.args.prepare_only:
+        
+        if self.args.test:
+            self.run_tests()
+            self.info("Test mode completed successfully.")
+            return
+
+        if self.args.prepare_only or self.args.pipeline_only:
             self.info("Prepare-only mode completed successfully.")
             return
         try:
@@ -220,6 +254,8 @@ def parse_args(argv: Iterable[str] | None = None) -> argparse.Namespace:
     parser = argparse.ArgumentParser(description="Launch the KSP Drishti Challenge 02 prototype.")
     parser.add_argument("--train", action="store_true", help="Train the optional risk model before starting services.")
     parser.add_argument("--prepare-only", action="store_true", help="Install/prepare data, then exit without starting services.")
+    parser.add_argument("--pipeline-only", action="store_true", help="Alias for --prepare-only.")
+    parser.add_argument("--test", action="store_true", help="Run tests and exit.")
     parser.add_argument("--non-interactive", action="store_true", help="Accept default prompts for automation.")
     parser.add_argument("--no-browser", action="store_true", help="Do not open the dashboard automatically.")
     return parser.parse_args(argv)
