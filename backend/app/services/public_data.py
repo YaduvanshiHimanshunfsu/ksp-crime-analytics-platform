@@ -119,7 +119,7 @@ def calibration_report() -> dict[str, Any]:
     real_dist = real.set_index("drishti_district")["total_crimes"]
     real_dist = real_dist / real_dist.sum()
     
-    correlation_value = float(synth_dist.corr(real_dist))
+    correlation_value = synth_dist.corr(real_dist)
     if pd.isna(correlation_value):
         correlation_value = 0.0
         
