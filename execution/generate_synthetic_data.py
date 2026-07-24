@@ -47,6 +47,22 @@ ALIASES = [
     ("Ramesh K.", "Ramesh Kumar", 31, "network-alpha"),
     ("S. Pasha", "Sameer Pasha", 27, "network-beta"),
     ("N. Shetty", "Naveen Shetty", 34, "network-gamma"),
+    ("V. Gowda", "Vinay Gowda", 29, "network-delta"),
+    ("Vinay G.", "Vinay Gowda", 29, "network-delta"),
+    ("K. Reddy", "Kiran Reddy", 41, "network-epsilon"),
+    ("Kiran R.", "Kiran Reddy", 43, "network-epsilon"),
+    ("M. Ali", "Mohammed Ali", 35, "network-zeta"),
+    ("Mohd. Ali", "Mohammed Ali", 36, "network-zeta"),
+    ("S. Rao", "Sanjay Rao", 25, "network-eta"),
+    ("Sanjay R.", "Sanjay Rao", 25, "network-eta"),
+    ("P. Patil", "Prakash Patil", 38, "network-theta"),
+    ("Prakash P.", "Prakash Patil", 39, "network-theta"),
+    ("D. Singh", "Deepak Singh", 30, "network-iota"),
+    ("Deepak S.", "Deepak Singh", 32, "network-iota"),
+    ("V. Nayak", "Vikram Nayak", 26, "network-kappa"),
+    ("Vikram N.", "Vikram Nayak", 27, "network-kappa"),
+    ("C. Bhat", "Chetan Bhat", 45, "network-lambda"),
+    ("Chetan B.", "Chetan Bhat", 46, "network-lambda"),
 ]
 
 

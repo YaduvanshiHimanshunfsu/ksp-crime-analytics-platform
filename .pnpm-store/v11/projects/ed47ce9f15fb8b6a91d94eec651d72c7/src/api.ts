@@ -1,7 +1,7 @@
 import { alerts, correlations, forecasts, hotspots, links, network, overview, repeatPatterns, trends } from "./mockData";
 import type { Alert, Correlation, Forecast, Hotspot, Link, Network, Overview, RepeatPattern, Trend } from "./types";
 
-const API_ROOT = import.meta.env.VITE_API_URL ?? "http://localhost:8000";
+const API_ROOT = import.meta.env.VITE_API_URL ?? "http://127.0.0.1:8000";
 
 export function logFrontendEvent(event: string, details: Record<string, string | number | boolean> = {}) {
   void fetch(`${API_ROOT}/api/v1/telemetry`, {
@@ -9,6 +9,19 @@ export function logFrontendEvent(event: string, details: Record<string, string |
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify({ event, details }),
   }).catch(() => undefined);
+}
+
+export async function submitAlertFeedback(alertId: string, useful: boolean, reason: string) {
+  try {
+    const response = await fetch(`${API_ROOT}/api/v1/alerts/${alertId}/feedback`, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ useful, reason }),
+    });
+    return response.ok;
+  } catch {
+    return false;
+  }
 }
 
 async function get<T>(path: string, fallback: T): Promise<{ data: T; live: boolean }> {

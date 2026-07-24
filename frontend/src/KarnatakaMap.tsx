@@ -11,6 +11,11 @@ function riskColor(score: number) {
 export default function KarnatakaMap({ hotspots, selected, onSelectHotspot, onSelectDistrict }: { hotspots: Hotspot[]; selected: Alert | null; onSelectHotspot: (hotspot: Hotspot) => void; onSelectDistrict: (district: string) => void }) {
   const mapRef = useRef<HTMLDivElement>(null);
   const leafletRef = useRef<L.Map | null>(null);
+  const callbacksRef = useRef({ onSelectHotspot, onSelectDistrict });
+
+  useEffect(() => {
+    callbacksRef.current = { onSelectHotspot, onSelectDistrict };
+  }, [onSelectHotspot, onSelectDistrict]);
 
   useEffect(() => {
     if (!mapRef.current) return;
@@ -37,12 +42,12 @@ export default function KarnatakaMap({ hotspots, selected, onSelectHotspot, onSe
         weight: 1
       }).bindTooltip(`${spot.station} (${spot.district})<br>Risk: ${spot.risk_score}<br>Cases: ${spot.incidents_28d}`)
         .on('click', () => {
-          onSelectHotspot(spot);
-          onSelectDistrict(spot.district);
+          callbacksRef.current.onSelectHotspot(spot);
+          callbacksRef.current.onSelectDistrict(spot.district);
         })
         .addTo(map);
     });
-  }, [hotspots, onSelectHotspot, onSelectDistrict]);
+  }, [hotspots]);
 
   return <div className="map-frame" style={{ position: "relative" }}>
     <div ref={mapRef} style={{ height: "420px", width: "100%", borderRadius: "8px", background: "#0a0a0a" }} />

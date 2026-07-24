@@ -62,8 +62,8 @@ def get_overview(district: str | None = None, crime_head: str | None = None):
 
 
 @app.get("/api/v1/hotspots")
-def get_hotspots(district: str | None = None, crime_head: str | None = None):
-    return analytics.hotspots(district, crime_head)
+def get_hotspots(district: str | None = None, crime_head: str | None = None, limit: int = 50, offset: int = 0):
+    return analytics.hotspots(district, crime_head, limit=limit, offset=offset)
 
 
 @app.get("/api/v1/trends")
@@ -72,8 +72,8 @@ def get_trends(district: str | None = None, crime_head: str | None = None):
 
 
 @app.get("/api/v1/alerts")
-def get_alerts(district: str | None = None, crime_head: str | None = None):
-    return analytics.alerts(district, crime_head)
+def get_alerts(district: str | None = None, crime_head: str | None = None, limit: int = 50, offset: int = 0):
+    return analytics.alerts(district, crime_head, limit=limit, offset=offset)
 
 
 @app.get("/api/v1/risk-forecast")
@@ -87,8 +87,8 @@ def get_network():
 
 
 @app.get("/api/v1/case-links")
-def get_case_links():
-    return analytics.case_links()
+def get_case_links(limit: int = 50, offset: int = 0):
+    return analytics.case_links(limit=limit, offset=offset)
 
 
 @app.get("/api/v1/repeat-patterns")

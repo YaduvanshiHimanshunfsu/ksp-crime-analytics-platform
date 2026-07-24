@@ -70,7 +70,7 @@ def invalidate_cache() -> None:
 
 
 def _scope(cases: pd.DataFrame, district: str | None, crime_head: str | None) -> pd.DataFrame:
-    scoped = cases.copy()
+    scoped = cases
     if district and district != "All Karnataka":
         scoped = scoped[scoped["district"] == district]
     if crime_head and crime_head != "All crime heads":
@@ -94,18 +94,27 @@ def overview(district: str | None = None, crime_head: str | None = None) -> dict
     previous = int(((cases["incident_date"] >= previous_start) & (cases["incident_date"] < recent_start)).sum())
     change = round(((current - previous) / max(previous, 1)) * 100, 1)
     reported_share = round(float(cases["reported_source"].isin(["victim_reported", "citizen_reported"]).mean() * 100), 1)
+    # Avoid double computation of hotspots (H-5)
+    hs = hotspots(district, crime_head)
+    active_alerts = 0
+    if len(cases) > 0:
+        supported_sources = cases["reported_source"].isin(["victim_reported", "citizen_reported"])
+        source_share = float(supported_sources.mean())
+        if source_share >= 0.75:
+            active_alerts = sum(1 for h in hs[:8] if h["incidents_28d"] >= 7)
+    
     return {
         "total_cases": int(len(cases)),
         "last_28_days": current,
         "change_percent": change,
-        "active_alerts": int(len(alerts(district, crime_head))),
+        "active_alerts": active_alerts,
         "reported_source_share": reported_share,
         "latest_data_date": latest.date().isoformat(),
         "synthetic_notice": "Synthetic, schema-faithful demonstration data - not live police intelligence.",
     }
 
 
-def hotspots(district: str | None = None, crime_head: str | None = None) -> list[dict[str, Any]]:
+def hotspots(district: str | None = None, crime_head: str | None = None, limit: int = 30, offset: int = 0) -> list[dict[str, Any]]:
     cases = _scope(load_cases(), district, crime_head)
     if cases.empty:
         return []
@@ -122,7 +131,7 @@ def hotspots(district: str | None = None, crime_head: str | None = None) -> list
     grouped["delta"] = grouped["current"] - grouped["previous"]
     grouped["risk_score"] = (grouped["current"] * 11 + grouped["delta"].clip(lower=0) * 9).clip(upper=99)
     result: list[dict[str, Any]] = []
-    for row in grouped.sort_values(["risk_score", "current"], ascending=False).head(30).reset_index().to_dict(orient="records"):
+    for row in grouped.sort_values(["risk_score", "current"], ascending=False).iloc[offset:offset+limit].reset_index().to_dict(orient="records"):
         result.append(
             {
                 "id": f"h3-demo-{row['index']}",
@@ -158,14 +167,14 @@ def trends(district: str | None = None, crime_head: str | None = None) -> list[d
     ]
 
 
-def alerts(district: str | None = None, crime_head: str | None = None) -> list[dict[str, Any]]:
+def alerts(district: str | None = None, crime_head: str | None = None, limit: int = 8, offset: int = 0) -> list[dict[str, Any]]:
     cases = _scope(load_cases(), district, crime_head)
     if cases.empty:
         return []
     supported_sources = cases["reported_source"].isin(["victim_reported", "citizen_reported"])
     source_share = float(supported_sources.mean()) if len(cases) else 0.0
     result: list[dict[str, Any]] = []
-    for hotspot in hotspots(district, crime_head)[:8]:
+    for hotspot in hotspots(district, crime_head)[offset:offset+limit]:
         confidence = "High" if hotspot["incidents_28d"] >= 7 and source_share >= 0.75 else "Review required"
         result.append(
             {
@@ -229,11 +238,11 @@ def risk_forecast(district: str | None = None, crime_head: str | None = None) ->
     return forecasts
 
 
-def case_links() -> list[dict[str, Any]]:
+def case_links(limit: int = 30, offset: int = 0) -> list[dict[str, Any]]:
     links = load_links()
     if links.empty:
         return []
-    return links.head(30).assign(confidence=lambda frame: (frame["confidence"] * 100).round(0).astype(int)).to_dict(orient="records")
+    return links.iloc[offset:offset+limit].assign(confidence=lambda frame: (frame["confidence"] * 100).round(0).astype(int)).to_dict(orient="records")
 
 
 def network() -> dict[str, list[dict[str, Any]]]:

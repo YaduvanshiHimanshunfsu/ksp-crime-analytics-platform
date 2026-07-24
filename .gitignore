@@ -17,3 +17,13 @@ logs/*.log
 logs/*.jsonl
 .tmp/
 tmp/
+
+# Fixed ignores
+data/processed/karnataka_monthly_aggregate.csv
+frontend/dist/
+*.tsbuildinfo
+.env
+tmp/*
+!tmp/.gitkeep
+data/raw/*
+!data/raw/.gitkeep

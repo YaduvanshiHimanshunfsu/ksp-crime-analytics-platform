@@ -52,6 +52,9 @@ def make_features(cases: pd.DataFrame) -> pd.DataFrame:
         daily["rolling_28"] = daily["incident_count"].shift(1).rolling(28).mean()
         daily["weekday"] = daily.index.dayofweek
         daily["month"] = daily.index.month
+        # Target: Total incidents in the NEXT 7 days (forward sum, not a backward leak).
+        # shift(-7) moves future values back by 7 days, then rolling(7).sum() sums the previous 7 rows 
+        # (which are now days 0 to 6 in the future relative to the current row).
         daily["target"] = daily["incident_count"].shift(-7).rolling(7).sum()
         records.append(daily.reset_index(names="date"))
     return pd.concat(records, ignore_index=True).dropna(subset=FEATURES + ["target"])

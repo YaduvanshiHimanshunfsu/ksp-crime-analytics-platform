@@ -26,7 +26,7 @@ def blocking_key(row: dict[str, str]) -> str:
     tokens = [token.strip(".").lower() for token in row["accused_name"].split() if token.strip(".")]
     if not tokens or row["accused_name"].startswith("Synthetic Person"):
         return ""
-    return f"{tokens[0][0]}:{tokens[-1][0]}:{int(row['age_years']) // 5}"
+    return f"{tokens[0][:2]}:{tokens[-1][0]}:{int(row['age_years']) // 5}"
 
 
 def candidates(rows: list[dict[str, str]]) -> list[dict[str, object]]:

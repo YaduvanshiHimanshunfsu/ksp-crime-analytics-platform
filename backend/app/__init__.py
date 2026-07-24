@@ -1,2 +1,1 @@
-"""KSP Drishti FastAPI application."""
-
+"""Backend package."""

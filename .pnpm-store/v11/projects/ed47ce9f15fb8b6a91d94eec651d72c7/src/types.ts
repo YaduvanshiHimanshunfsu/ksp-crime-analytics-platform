@@ -69,9 +69,3 @@ export type DistrictDrilldown = {
   total_cases: number;
   stations: { station: string; total_cases: number; top_crime: string; recent_cases: number }[];
 };
-
-export type SourceStatus = {
-  status: string;
-  message: string;
-};
-
