@@ -22,13 +22,21 @@ export type Alert = {
   credibility: { reported_source_share: number; geo_complete: number; model_status: string };
 };
 
+export type ShapDriver = {
+  feature: string;
+  readable_name: string;
+  shap_value: number;
+  direction: "increases risk" | "decreases risk";
+  feature_value: number | null;
+};
+
 export type Forecast = {
   area: string;
   district: string;
   crime_head: string;
   next_week_range: number[];
   risk_score: number;
-  drivers: string[];
+  drivers: ShapDriver[];
   use: string;
 };
 
@@ -68,4 +76,38 @@ export type DistrictDrilldown = {
   district: string;
   total_cases: number;
   stations: { station: string; total_cases: number; top_crime: string; recent_cases: number }[];
+};
+
+export type DistrictBenchmark = {
+  district: string;
+  cases_reported: number;
+};
+
+export type DistrictTrend = {
+  year: number;
+  total_crimes: number;
+};
+
+export type CalibrationReport = {
+  status: string;
+  synthetic_total?: number;
+  real_total_2025?: number;
+  scale_factor?: number;
+  district_correlation?: number;
+  interpretation?: string;
+};
+
+export type ModelCard = {
+  model_version: string;
+  algorithm: string;
+  feature_count: number;
+  train_rows: number;
+  test_rows: number;
+  temporal_split: string;
+  model_mae: number;
+  baseline_mae: number;
+  improvement_percent: number;
+  prohibited_use?: string;
+  explainability?: string;
+  data_sources?: Record<string, string>;
 };

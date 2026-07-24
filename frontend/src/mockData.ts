@@ -44,7 +44,11 @@ export const forecasts: Forecast[] = hotspots.map((hotspot) => ({
   crime_head: hotspot.crime_head,
   next_week_range: [1, 4],
   risk_score: hotspot.risk_score,
-  drivers: ["recent reported-incident trend", "same-category 28-day activity", "calendar and seasonal pattern"],
+  drivers: [
+    { feature: "lag_7", readable_name: "recent reported-incident trend", shap_value: 0.5, direction: "increases risk", feature_value: 10 },
+    { feature: "lag_28", readable_name: "same-category 28-day activity", shap_value: 0.3, direction: "increases risk", feature_value: 30 },
+    { feature: "month_sin", readable_name: "calendar and seasonal pattern", shap_value: -0.2, direction: "decreases risk", feature_value: 0.8 }
+  ],
   use: "Prioritise analyst review; not a person-level prediction or patrol directive.",
 }));
 

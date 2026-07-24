@@ -1,5 +1,5 @@
 import { alerts, correlations, forecasts, hotspots, links, network, overview, repeatPatterns, trends } from "./mockData";
-import type { Alert, Correlation, Forecast, Hotspot, Link, Network, Overview, RepeatPattern, Trend } from "./types";
+import type { Alert, Correlation, Forecast, Hotspot, Link, Network, Overview, RepeatPattern, Trend, DistrictBenchmark, DistrictTrend, CalibrationReport, ModelCard } from "./types";
 
 const API_ROOT = import.meta.env.VITE_API_URL ?? "http://127.0.0.1:8000";
 
@@ -60,6 +60,21 @@ export async function loadDashboard(district: string, crimeHead: string) {
 }
 
 export async function getDistrictDrilldown(district: string) {
-  const result = await get(`/api/v1/district-drilldown/${encodeURIComponent(district)}`, { district, total_cases: 0, stations: [] });
-  return result;
+  return get(`/api/v1/district-drilldown?district=${encodeURIComponent(district)}`, { district, total_cases: 0, stations: [] });
+}
+
+export async function getDistrictBenchmark() {
+  return get<{ district: string; cases_reported: number }[]>(`/api/v1/district-benchmark`, []);
+}
+
+export async function getDistrictTrends(district: string) {
+  return get<{ year: number; total_crimes: number }[]>(`/api/v1/district-trends?district=${encodeURIComponent(district)}`, []);
+}
+
+export async function getCalibrationReport() {
+  return get(`/api/v1/calibration-report`, { status: "offline" });
+}
+
+export async function getModelCard() {
+  return get(`/api/v1/model-card`, { error: "offline" });
 }
