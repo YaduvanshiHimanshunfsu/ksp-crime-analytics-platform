@@ -64,7 +64,13 @@ export async function getDistrictDrilldown(district: string) {
 }
 
 export async function getDistrictBenchmark() {
-  return get<{ district: string; cases_reported: number }[]>(`/api/v1/district-benchmark`, []);
+  const res = await get<{ districts?: { drishti_district: string; total_crimes: number }[] }>(`/api/v1/district-benchmark`, { districts: [] });
+  const districts = res.data.districts || [];
+  const mapped = districts.map(d => ({
+    district: d.drishti_district,
+    cases_reported: d.total_crimes
+  }));
+  return { data: mapped, live: res.live };
 }
 
 export async function getDistrictTrends(district: string) {
