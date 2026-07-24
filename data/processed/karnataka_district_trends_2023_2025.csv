@@ -1,0 +1,823 @@
+district_normalized,year,crime_head,data_source,data_classification,cases_reported
+Bagalkot,2023,Total IPC,OpenCity.in / Karnataka Police (2023-2025),official_aggregate,2317
+Bagalkot,2023,Total SLL,OpenCity.in / Karnataka Police (2023-2025),official_aggregate,985
+Bagalkot,2024,Assault,OpenCity.in / Karnataka Police (2023-2025),official_aggregate,132
+Bagalkot,2024,Attempt To Murder,OpenCity.in / Karnataka Police (2023-2025),official_aggregate,85
+Bagalkot,2024,Burglary,OpenCity.in / Karnataka Police (2023-2025),official_aggregate,97
+Bagalkot,2024,Cruelty By Husband,OpenCity.in / Karnataka Police (2023-2025),official_aggregate,35
+Bagalkot,2024,Cyber Fraud,OpenCity.in / Karnataka Police (2023-2025),official_aggregate,47
+Bagalkot,2024,Dacoity,OpenCity.in / Karnataka Police (2023-2025),official_aggregate,7
+Bagalkot,2024,Dowry Deaths,OpenCity.in / Karnataka Police (2023-2025),official_aggregate,2
+Bagalkot,2024,Dp Act,OpenCity.in / Karnataka Police (2023-2025),official_aggregate,20
+Bagalkot,2024,Fatal Motor Accidents,OpenCity.in / Karnataka Police (2023-2025),official_aggregate,367
+Bagalkot,2024,Gambling,OpenCity.in / Karnataka Police (2023-2025),official_aggregate,463
+Bagalkot,2024,Molestation,OpenCity.in / Karnataka Police (2023-2025),official_aggregate,146
+Bagalkot,2024,Murder,OpenCity.in / Karnataka Police (2023-2025),official_aggregate,20
+Bagalkot,2024,Non-Fatal Motor Accidents,OpenCity.in / Karnataka Police (2023-2025),official_aggregate,495
+Bagalkot,2024,Pocso,OpenCity.in / Karnataka Police (2023-2025),official_aggregate,63
+Bagalkot,2024,Pocso Rape,OpenCity.in / Karnataka Police (2023-2025),official_aggregate,50
+Bagalkot,2024,Rape,OpenCity.in / Karnataka Police (2023-2025),official_aggregate,9
+Bagalkot,2024,Riots,OpenCity.in / Karnataka Police (2023-2025),official_aggregate,89
+Bagalkot,2024,Robbery,OpenCity.in / Karnataka Police (2023-2025),official_aggregate,8
+Bagalkot,2024,Sc/St,OpenCity.in / Karnataka Police (2023-2025),official_aggregate,58
+Bagalkot,2024,Theft,OpenCity.in / Karnataka Police (2023-2025),official_aggregate,275
+Bagalkot,2025,Total IPC,OpenCity.in / Karnataka Police (2023-2025),official_aggregate,2208
+Bagalkot,2025,Total SLL,OpenCity.in / Karnataka Police (2023-2025),official_aggregate,1362
+Ballari,2023,Total IPC,OpenCity.in / Karnataka Police (2023-2025),official_aggregate,2053
+Ballari,2023,Total SLL,OpenCity.in / Karnataka Police (2023-2025),official_aggregate,1386
+Ballari,2024,Assault,OpenCity.in / Karnataka Police (2023-2025),official_aggregate,204
+Ballari,2024,Attempt To Murder,OpenCity.in / Karnataka Police (2023-2025),official_aggregate,53
+Ballari,2024,Burglary,OpenCity.in / Karnataka Police (2023-2025),official_aggregate,98
+Ballari,2024,Cruelty By Husband,OpenCity.in / Karnataka Police (2023-2025),official_aggregate,110
+Ballari,2024,Cyber Fraud,OpenCity.in / Karnataka Police (2023-2025),official_aggregate,119
+Ballari,2024,Dacoity,OpenCity.in / Karnataka Police (2023-2025),official_aggregate,2
+Ballari,2024,Dowry Deaths,OpenCity.in / Karnataka Police (2023-2025),official_aggregate,1
+Ballari,2024,Dp Act,OpenCity.in / Karnataka Police (2023-2025),official_aggregate,11
+Ballari,2024,Fatal Motor Accidents,OpenCity.in / Karnataka Police (2023-2025),official_aggregate,215
+Ballari,2024,Gambling,OpenCity.in / Karnataka Police (2023-2025),official_aggregate,691
+Ballari,2024,Molestation,OpenCity.in / Karnataka Police (2023-2025),official_aggregate,73
+Ballari,2024,Murder,OpenCity.in / Karnataka Police (2023-2025),official_aggregate,18
+Ballari,2024,Non-Fatal Motor Accidents,OpenCity.in / Karnataka Police (2023-2025),official_aggregate,338
+Ballari,2024,Pocso,OpenCity.in / Karnataka Police (2023-2025),official_aggregate,54
+Ballari,2024,Pocso Rape,OpenCity.in / Karnataka Police (2023-2025),official_aggregate,35
+Ballari,2024,Rape,OpenCity.in / Karnataka Police (2023-2025),official_aggregate,14
+Ballari,2024,Riots,OpenCity.in / Karnataka Police (2023-2025),official_aggregate,96
+Ballari,2024,Robbery,OpenCity.in / Karnataka Police (2023-2025),official_aggregate,9
+Ballari,2024,Sc/St,OpenCity.in / Karnataka Police (2023-2025),official_aggregate,36
+Ballari,2024,Theft,OpenCity.in / Karnataka Police (2023-2025),official_aggregate,323
+Ballari,2025,Total IPC,OpenCity.in / Karnataka Police (2023-2025),official_aggregate,1924
+Ballari,2025,Total SLL,OpenCity.in / Karnataka Police (2023-2025),official_aggregate,1961
+Belagavi City,2023,Total IPC,OpenCity.in / Karnataka Police (2023-2025),official_aggregate,1694
+Belagavi City,2023,Total SLL,OpenCity.in / Karnataka Police (2023-2025),official_aggregate,393
+Belagavi City,2024,Assault,OpenCity.in / Karnataka Police (2023-2025),official_aggregate,173
+Belagavi City,2024,Attempt To Murder,OpenCity.in / Karnataka Police (2023-2025),official_aggregate,66
+Belagavi City,2024,Burglary,OpenCity.in / Karnataka Police (2023-2025),official_aggregate,104
+Belagavi City,2024,Cruelty By Husband,OpenCity.in / Karnataka Police (2023-2025),official_aggregate,62
+Belagavi City,2024,Cyber Fraud,OpenCity.in / Karnataka Police (2023-2025),official_aggregate,105
+Belagavi City,2024,Dacoity,OpenCity.in / Karnataka Police (2023-2025),official_aggregate,5
+Belagavi City,2024,Dowry Deaths,OpenCity.in / Karnataka Police (2023-2025),official_aggregate,3
+Belagavi City,2024,Dp Act,OpenCity.in / Karnataka Police (2023-2025),official_aggregate,3
+Belagavi City,2024,Fatal Motor Accidents,OpenCity.in / Karnataka Police (2023-2025),official_aggregate,130
+Belagavi City,2024,Gambling,OpenCity.in / Karnataka Police (2023-2025),official_aggregate,125
+Belagavi City,2024,Molestation,OpenCity.in / Karnataka Police (2023-2025),official_aggregate,54
+Belagavi City,2024,Murder,OpenCity.in / Karnataka Police (2023-2025),official_aggregate,15
+Belagavi City,2024,Non-Fatal Motor Accidents,OpenCity.in / Karnataka Police (2023-2025),official_aggregate,390
+Belagavi City,2024,Pocso,OpenCity.in / Karnataka Police (2023-2025),official_aggregate,28
+Belagavi City,2024,Pocso Rape,OpenCity.in / Karnataka Police (2023-2025),official_aggregate,16
+Belagavi City,2024,Rape,OpenCity.in / Karnataka Police (2023-2025),official_aggregate,11
+Belagavi City,2024,Riots,OpenCity.in / Karnataka Police (2023-2025),official_aggregate,57
+Belagavi City,2024,Robbery,OpenCity.in / Karnataka Police (2023-2025),official_aggregate,28
+Belagavi City,2024,Sc/St,OpenCity.in / Karnataka Police (2023-2025),official_aggregate,35
+Belagavi City,2024,Theft,OpenCity.in / Karnataka Police (2023-2025),official_aggregate,270
+Belagavi City,2025,Total IPC,OpenCity.in / Karnataka Police (2023-2025),official_aggregate,1655
+Belagavi City,2025,Total SLL,OpenCity.in / Karnataka Police (2023-2025),official_aggregate,652
+Belagavi Dist,2024,Assault,OpenCity.in / Karnataka Police (2023-2025),official_aggregate,447
+Belagavi Dist,2024,Attempt To Murder,OpenCity.in / Karnataka Police (2023-2025),official_aggregate,119
+Belagavi Dist,2024,Burglary,OpenCity.in / Karnataka Police (2023-2025),official_aggregate,181
+Belagavi Dist,2024,Cruelty By Husband,OpenCity.in / Karnataka Police (2023-2025),official_aggregate,113
+Belagavi Dist,2024,Cyber Fraud,OpenCity.in / Karnataka Police (2023-2025),official_aggregate,71
+Belagavi Dist,2024,Dacoity,OpenCity.in / Karnataka Police (2023-2025),official_aggregate,8
+Belagavi Dist,2024,Dowry Deaths,OpenCity.in / Karnataka Police (2023-2025),official_aggregate,3
+Belagavi Dist,2024,Dp Act,OpenCity.in / Karnataka Police (2023-2025),official_aggregate,13
+Belagavi Dist,2024,Fatal Motor Accidents,OpenCity.in / Karnataka Police (2023-2025),official_aggregate,696
+Belagavi Dist,2024,Gambling,OpenCity.in / Karnataka Police (2023-2025),official_aggregate,841
+Belagavi Dist,2024,Molestation,OpenCity.in / Karnataka Police (2023-2025),official_aggregate,188
+Belagavi Dist,2024,Murder,OpenCity.in / Karnataka Police (2023-2025),official_aggregate,70
+Belagavi Dist,2024,Non-Fatal Motor Accidents,OpenCity.in / Karnataka Police (2023-2025),official_aggregate,1243
+Belagavi Dist,2024,Pocso,OpenCity.in / Karnataka Police (2023-2025),official_aggregate,128
+Belagavi Dist,2024,Pocso Rape,OpenCity.in / Karnataka Police (2023-2025),official_aggregate,94
+Belagavi Dist,2024,Rape,OpenCity.in / Karnataka Police (2023-2025),official_aggregate,17
+Belagavi Dist,2024,Riots,OpenCity.in / Karnataka Police (2023-2025),official_aggregate,228
+Belagavi Dist,2024,Robbery,OpenCity.in / Karnataka Police (2023-2025),official_aggregate,19
+Belagavi Dist,2024,Sc/St,OpenCity.in / Karnataka Police (2023-2025),official_aggregate,85
+Belagavi Dist,2024,Theft,OpenCity.in / Karnataka Police (2023-2025),official_aggregate,428
+Belagavi Dist,2025,Total IPC,OpenCity.in / Karnataka Police (2023-2025),official_aggregate,4535
+Belagavi Dist,2025,Total SLL,OpenCity.in / Karnataka Police (2023-2025),official_aggregate,2059
+Belagavi District,2023,Total IPC,OpenCity.in / Karnataka Police (2023-2025),official_aggregate,4955
+Belagavi District,2023,Total SLL,OpenCity.in / Karnataka Police (2023-2025),official_aggregate,1830
+Bengaluru District,2023,Total IPC,OpenCity.in / Karnataka Police (2023-2025),official_aggregate,7568
+Bengaluru District,2023,Total SLL,OpenCity.in / Karnataka Police (2023-2025),official_aggregate,1853
+Bengaluru Urban,2023,Total IPC,OpenCity.in / Karnataka Police (2023-2025),official_aggregate,41637
+Bengaluru Urban,2023,Total SLL,OpenCity.in / Karnataka Police (2023-2025),official_aggregate,26883
+Bengaluru Urban,2024,Assault,OpenCity.in / Karnataka Police (2023-2025),official_aggregate,4453
+Bengaluru Urban,2024,Attempt To Murder,OpenCity.in / Karnataka Police (2023-2025),official_aggregate,578
+Bengaluru Urban,2024,Burglary,OpenCity.in / Karnataka Police (2023-2025),official_aggregate,1297
+Bengaluru Urban,2024,Cruelty By Husband,OpenCity.in / Karnataka Police (2023-2025),official_aggregate,767
+Bengaluru Urban,2024,Cyber Fraud,OpenCity.in / Karnataka Police (2023-2025),official_aggregate,18557
+Bengaluru Urban,2024,Dacoity,OpenCity.in / Karnataka Police (2023-2025),official_aggregate,103
+Bengaluru Urban,2024,Dowry Deaths,OpenCity.in / Karnataka Police (2023-2025),official_aggregate,30
+Bengaluru Urban,2024,Dp Act,OpenCity.in / Karnataka Police (2023-2025),official_aggregate,922
+Bengaluru Urban,2024,Fatal Motor Accidents,OpenCity.in / Karnataka Police (2023-2025),official_aggregate,1599
+Bengaluru Urban,2024,Gambling,OpenCity.in / Karnataka Police (2023-2025),official_aggregate,648
+Bengaluru Urban,2024,Molestation,OpenCity.in / Karnataka Police (2023-2025),official_aggregate,1482
+Bengaluru Urban,2024,Murder,OpenCity.in / Karnataka Police (2023-2025),official_aggregate,242
+Bengaluru Urban,2024,Non-Fatal Motor Accidents,OpenCity.in / Karnataka Police (2023-2025),official_aggregate,5750
+Bengaluru Urban,2024,Pocso,OpenCity.in / Karnataka Police (2023-2025),official_aggregate,719
+Bengaluru Urban,2024,Pocso Rape,OpenCity.in / Karnataka Police (2023-2025),official_aggregate,496
+Bengaluru Urban,2024,Rape,OpenCity.in / Karnataka Police (2023-2025),official_aggregate,195
+Bengaluru Urban,2024,Riots,OpenCity.in / Karnataka Police (2023-2025),official_aggregate,183
+Bengaluru Urban,2024,Robbery,OpenCity.in / Karnataka Police (2023-2025),official_aggregate,783
+Bengaluru Urban,2024,Sc/St,OpenCity.in / Karnataka Police (2023-2025),official_aggregate,336
+Bengaluru Urban,2024,Theft,OpenCity.in / Karnataka Police (2023-2025),official_aggregate,11193
+Bengaluru Urban,2025,Total IPC,OpenCity.in / Karnataka Police (2023-2025),official_aggregate,47258
+Bengaluru Urban,2025,Total SLL,OpenCity.in / Karnataka Police (2023-2025),official_aggregate,21414
+Bidar,2023,Total IPC,OpenCity.in / Karnataka Police (2023-2025),official_aggregate,3110
+Bidar,2023,Total SLL,OpenCity.in / Karnataka Police (2023-2025),official_aggregate,1224
+Bidar,2024,Assault,OpenCity.in / Karnataka Police (2023-2025),official_aggregate,556
+Bidar,2024,Attempt To Murder,OpenCity.in / Karnataka Police (2023-2025),official_aggregate,54
+Bidar,2024,Burglary,OpenCity.in / Karnataka Police (2023-2025),official_aggregate,134
+Bidar,2024,Cruelty By Husband,OpenCity.in / Karnataka Police (2023-2025),official_aggregate,117
+Bidar,2024,Cyber Fraud,OpenCity.in / Karnataka Police (2023-2025),official_aggregate,44
+Bidar,2024,Dacoity,OpenCity.in / Karnataka Police (2023-2025),official_aggregate,3
+Bidar,2024,Dowry Deaths,OpenCity.in / Karnataka Police (2023-2025),official_aggregate,2
+Bidar,2024,Dp Act,OpenCity.in / Karnataka Police (2023-2025),official_aggregate,23
+Bidar,2024,Fatal Motor Accidents,OpenCity.in / Karnataka Police (2023-2025),official_aggregate,315
+Bidar,2024,Gambling,OpenCity.in / Karnataka Police (2023-2025),official_aggregate,459
+Bidar,2024,Molestation,OpenCity.in / Karnataka Police (2023-2025),official_aggregate,52
+Bidar,2024,Murder,OpenCity.in / Karnataka Police (2023-2025),official_aggregate,31
+Bidar,2024,Non-Fatal Motor Accidents,OpenCity.in / Karnataka Police (2023-2025),official_aggregate,744
+Bidar,2024,Pocso,OpenCity.in / Karnataka Police (2023-2025),official_aggregate,59
+Bidar,2024,Pocso Rape,OpenCity.in / Karnataka Police (2023-2025),official_aggregate,40
+Bidar,2024,Rape,OpenCity.in / Karnataka Police (2023-2025),official_aggregate,11
+Bidar,2024,Riots,OpenCity.in / Karnataka Police (2023-2025),official_aggregate,137
+Bidar,2024,Robbery,OpenCity.in / Karnataka Police (2023-2025),official_aggregate,11
+Bidar,2024,Sc/St,OpenCity.in / Karnataka Police (2023-2025),official_aggregate,27
+Bidar,2024,Theft,OpenCity.in / Karnataka Police (2023-2025),official_aggregate,303
+Bidar,2025,Total IPC,OpenCity.in / Karnataka Police (2023-2025),official_aggregate,3054
+Bidar,2025,Total SLL,OpenCity.in / Karnataka Police (2023-2025),official_aggregate,1172
+Chamarajanagar,2024,Assault,OpenCity.in / Karnataka Police (2023-2025),official_aggregate,358
+Chamarajanagar,2024,Attempt To Murder,OpenCity.in / Karnataka Police (2023-2025),official_aggregate,53
+Chamarajanagar,2024,Burglary,OpenCity.in / Karnataka Police (2023-2025),official_aggregate,99
+Chamarajanagar,2024,Cruelty By Husband,OpenCity.in / Karnataka Police (2023-2025),official_aggregate,26
+Chamarajanagar,2024,Cyber Fraud,OpenCity.in / Karnataka Police (2023-2025),official_aggregate,29
+Chamarajanagar,2024,Dacoity,OpenCity.in / Karnataka Police (2023-2025),official_aggregate,1
+Chamarajanagar,2024,Dowry Deaths,OpenCity.in / Karnataka Police (2023-2025),official_aggregate,3
+Chamarajanagar,2024,Dp Act,OpenCity.in / Karnataka Police (2023-2025),official_aggregate,14
+Chamarajanagar,2024,Fatal Motor Accidents,OpenCity.in / Karnataka Police (2023-2025),official_aggregate,234
+Chamarajanagar,2024,Gambling,OpenCity.in / Karnataka Police (2023-2025),official_aggregate,115
+Chamarajanagar,2024,Molestation,OpenCity.in / Karnataka Police (2023-2025),official_aggregate,194
+Chamarajanagar,2024,Murder,OpenCity.in / Karnataka Police (2023-2025),official_aggregate,11
+Chamarajanagar,2024,Non-Fatal Motor Accidents,OpenCity.in / Karnataka Police (2023-2025),official_aggregate,535
+Chamarajanagar,2024,Pocso,OpenCity.in / Karnataka Police (2023-2025),official_aggregate,89
+Chamarajanagar,2024,Pocso Rape,OpenCity.in / Karnataka Police (2023-2025),official_aggregate,65
+Chamarajanagar,2024,Rape,OpenCity.in / Karnataka Police (2023-2025),official_aggregate,14
+Chamarajanagar,2024,Riots,OpenCity.in / Karnataka Police (2023-2025),official_aggregate,52
+Chamarajanagar,2024,Robbery,OpenCity.in / Karnataka Police (2023-2025),official_aggregate,16
+Chamarajanagar,2024,Sc/St,OpenCity.in / Karnataka Police (2023-2025),official_aggregate,38
+Chamarajanagar,2024,Theft,OpenCity.in / Karnataka Police (2023-2025),official_aggregate,151
+Chamarajanagar,2025,Total IPC,OpenCity.in / Karnataka Police (2023-2025),official_aggregate,2068
+Chamarajanagar,2025,Total SLL,OpenCity.in / Karnataka Police (2023-2025),official_aggregate,844
+Chamarajnagar,2023,Total IPC,OpenCity.in / Karnataka Police (2023-2025),official_aggregate,1951
+Chamarajnagar,2023,Total SLL,OpenCity.in / Karnataka Police (2023-2025),official_aggregate,717
+Chickballapura,2024,Assault,OpenCity.in / Karnataka Police (2023-2025),official_aggregate,457
+Chickballapura,2024,Attempt To Murder,OpenCity.in / Karnataka Police (2023-2025),official_aggregate,49
+Chickballapura,2024,Burglary,OpenCity.in / Karnataka Police (2023-2025),official_aggregate,117
+Chickballapura,2024,Cruelty By Husband,OpenCity.in / Karnataka Police (2023-2025),official_aggregate,53
+Chickballapura,2024,Cyber Fraud,OpenCity.in / Karnataka Police (2023-2025),official_aggregate,197
+Chickballapura,2024,Dacoity,OpenCity.in / Karnataka Police (2023-2025),official_aggregate,6
+Chickballapura,2024,Dowry Deaths,OpenCity.in / Karnataka Police (2023-2025),official_aggregate,2
+Chickballapura,2024,Dp Act,OpenCity.in / Karnataka Police (2023-2025),official_aggregate,11
+Chickballapura,2024,Fatal Motor Accidents,OpenCity.in / Karnataka Police (2023-2025),official_aggregate,311
+Chickballapura,2024,Gambling,OpenCity.in / Karnataka Police (2023-2025),official_aggregate,315
+Chickballapura,2024,Molestation,OpenCity.in / Karnataka Police (2023-2025),official_aggregate,128
+Chickballapura,2024,Murder,OpenCity.in / Karnataka Police (2023-2025),official_aggregate,27
+Chickballapura,2024,Non-Fatal Motor Accidents,OpenCity.in / Karnataka Police (2023-2025),official_aggregate,546
+Chickballapura,2024,Pocso,OpenCity.in / Karnataka Police (2023-2025),official_aggregate,183
+Chickballapura,2024,Pocso Rape,OpenCity.in / Karnataka Police (2023-2025),official_aggregate,156
+Chickballapura,2024,Rape,OpenCity.in / Karnataka Police (2023-2025),official_aggregate,17
+Chickballapura,2024,Riots,OpenCity.in / Karnataka Police (2023-2025),official_aggregate,135
+Chickballapura,2024,Robbery,OpenCity.in / Karnataka Police (2023-2025),official_aggregate,20
+Chickballapura,2024,Sc/St,OpenCity.in / Karnataka Police (2023-2025),official_aggregate,42
+Chickballapura,2024,Theft,OpenCity.in / Karnataka Police (2023-2025),official_aggregate,300
+Chickballapura,2025,Total IPC,OpenCity.in / Karnataka Police (2023-2025),official_aggregate,2542
+Chickballapura,2025,Total SLL,OpenCity.in / Karnataka Police (2023-2025),official_aggregate,1619
+Chikkaballapura,2023,Total IPC,OpenCity.in / Karnataka Police (2023-2025),official_aggregate,2734
+Chikkaballapura,2023,Total SLL,OpenCity.in / Karnataka Police (2023-2025),official_aggregate,1223
+Chikkamagaluru,2023,Total IPC,OpenCity.in / Karnataka Police (2023-2025),official_aggregate,3036
+Chikkamagaluru,2023,Total SLL,OpenCity.in / Karnataka Police (2023-2025),official_aggregate,1211
+Chikkamagaluru,2024,Assault,OpenCity.in / Karnataka Police (2023-2025),official_aggregate,521
+Chikkamagaluru,2024,Attempt To Murder,OpenCity.in / Karnataka Police (2023-2025),official_aggregate,51
+Chikkamagaluru,2024,Burglary,OpenCity.in / Karnataka Police (2023-2025),official_aggregate,96
+Chikkamagaluru,2024,Cruelty By Husband,OpenCity.in / Karnataka Police (2023-2025),official_aggregate,77
+Chikkamagaluru,2024,Cyber Fraud,OpenCity.in / Karnataka Police (2023-2025),official_aggregate,102
+Chikkamagaluru,2024,Dacoity,OpenCity.in / Karnataka Police (2023-2025),official_aggregate,4
+Chikkamagaluru,2024,Dowry Deaths,OpenCity.in / Karnataka Police (2023-2025),official_aggregate,1
+Chikkamagaluru,2024,Dp Act,OpenCity.in / Karnataka Police (2023-2025),official_aggregate,6
+Chikkamagaluru,2024,Fatal Motor Accidents,OpenCity.in / Karnataka Police (2023-2025),official_aggregate,237
+Chikkamagaluru,2024,Gambling,OpenCity.in / Karnataka Police (2023-2025),official_aggregate,176
+Chikkamagaluru,2024,Molestation,OpenCity.in / Karnataka Police (2023-2025),official_aggregate,152
+Chikkamagaluru,2024,Murder,OpenCity.in / Karnataka Police (2023-2025),official_aggregate,31
+Chikkamagaluru,2024,Non-Fatal Motor Accidents,OpenCity.in / Karnataka Police (2023-2025),official_aggregate,713
+Chikkamagaluru,2024,Pocso,OpenCity.in / Karnataka Police (2023-2025),official_aggregate,121
+Chikkamagaluru,2024,Pocso Rape,OpenCity.in / Karnataka Police (2023-2025),official_aggregate,89
+Chikkamagaluru,2024,Rape,OpenCity.in / Karnataka Police (2023-2025),official_aggregate,12
+Chikkamagaluru,2024,Riots,OpenCity.in / Karnataka Police (2023-2025),official_aggregate,44
+Chikkamagaluru,2024,Robbery,OpenCity.in / Karnataka Police (2023-2025),official_aggregate,9
+Chikkamagaluru,2024,Sc/St,OpenCity.in / Karnataka Police (2023-2025),official_aggregate,50
+Chikkamagaluru,2024,Theft,OpenCity.in / Karnataka Police (2023-2025),official_aggregate,232
+Chikkamagaluru,2025,Total IPC,OpenCity.in / Karnataka Police (2023-2025),official_aggregate,2722
+Chikkamagaluru,2025,Total SLL,OpenCity.in / Karnataka Police (2023-2025),official_aggregate,1488
+Chitradurga,2023,Total IPC,OpenCity.in / Karnataka Police (2023-2025),official_aggregate,4367
+Chitradurga,2023,Total SLL,OpenCity.in / Karnataka Police (2023-2025),official_aggregate,1545
+Chitradurga,2024,Assault,OpenCity.in / Karnataka Police (2023-2025),official_aggregate,702
+Chitradurga,2024,Attempt To Murder,OpenCity.in / Karnataka Police (2023-2025),official_aggregate,83
+Chitradurga,2024,Burglary,OpenCity.in / Karnataka Police (2023-2025),official_aggregate,118
+Chitradurga,2024,Cruelty By Husband,OpenCity.in / Karnataka Police (2023-2025),official_aggregate,121
+Chitradurga,2024,Cyber Fraud,OpenCity.in / Karnataka Police (2023-2025),official_aggregate,80
+Chitradurga,2024,Dacoity,OpenCity.in / Karnataka Police (2023-2025),official_aggregate,2
+Chitradurga,2024,Dowry Deaths,OpenCity.in / Karnataka Police (2023-2025),official_aggregate,4
+Chitradurga,2024,Dp Act,OpenCity.in / Karnataka Police (2023-2025),official_aggregate,53
+Chitradurga,2024,Fatal Motor Accidents,OpenCity.in / Karnataka Police (2023-2025),official_aggregate,413
+Chitradurga,2024,Gambling,OpenCity.in / Karnataka Police (2023-2025),official_aggregate,512
+Chitradurga,2024,Molestation,OpenCity.in / Karnataka Police (2023-2025),official_aggregate,398
+Chitradurga,2024,Murder,OpenCity.in / Karnataka Police (2023-2025),official_aggregate,30
+Chitradurga,2024,Non-Fatal Motor Accidents,OpenCity.in / Karnataka Police (2023-2025),official_aggregate,1280
+Chitradurga,2024,Pocso,OpenCity.in / Karnataka Police (2023-2025),official_aggregate,147
+Chitradurga,2024,Pocso Rape,OpenCity.in / Karnataka Police (2023-2025),official_aggregate,110
+Chitradurga,2024,Rape,OpenCity.in / Karnataka Police (2023-2025),official_aggregate,17
+Chitradurga,2024,Riots,OpenCity.in / Karnataka Police (2023-2025),official_aggregate,218
+Chitradurga,2024,Robbery,OpenCity.in / Karnataka Police (2023-2025),official_aggregate,25
+Chitradurga,2024,Sc/St,OpenCity.in / Karnataka Police (2023-2025),official_aggregate,55
+Chitradurga,2024,Theft,OpenCity.in / Karnataka Police (2023-2025),official_aggregate,443
+Chitradurga,2025,Total IPC,OpenCity.in / Karnataka Police (2023-2025),official_aggregate,4098
+Chitradurga,2025,Total SLL,OpenCity.in / Karnataka Police (2023-2025),official_aggregate,1740
+Dakshina Kannada,2023,Total IPC,OpenCity.in / Karnataka Police (2023-2025),official_aggregate,1835
+Dakshina Kannada,2023,Total SLL,OpenCity.in / Karnataka Police (2023-2025),official_aggregate,375
+Dakshina Kannada,2024,Assault,OpenCity.in / Karnataka Police (2023-2025),official_aggregate,192
+Dakshina Kannada,2024,Attempt To Murder,OpenCity.in / Karnataka Police (2023-2025),official_aggregate,30
+Dakshina Kannada,2024,Burglary,OpenCity.in / Karnataka Police (2023-2025),official_aggregate,70
+Dakshina Kannada,2024,Cruelty By Husband,OpenCity.in / Karnataka Police (2023-2025),official_aggregate,31
+Dakshina Kannada,2024,Cyber Fraud,OpenCity.in / Karnataka Police (2023-2025),official_aggregate,115
+Dakshina Kannada,2024,Dacoity,OpenCity.in / Karnataka Police (2023-2025),official_aggregate,1
+Dakshina Kannada,2024,Dowry Deaths,OpenCity.in / Karnataka Police (2023-2025),official_aggregate,0
+Dakshina Kannada,2024,Dp Act,OpenCity.in / Karnataka Police (2023-2025),official_aggregate,2
+Dakshina Kannada,2024,Fatal Motor Accidents,OpenCity.in / Karnataka Police (2023-2025),official_aggregate,148
+Dakshina Kannada,2024,Gambling,OpenCity.in / Karnataka Police (2023-2025),official_aggregate,17
+Dakshina Kannada,2024,Molestation,OpenCity.in / Karnataka Police (2023-2025),official_aggregate,73
+Dakshina Kannada,2024,Murder,OpenCity.in / Karnataka Police (2023-2025),official_aggregate,12
+Dakshina Kannada,2024,Non-Fatal Motor Accidents,OpenCity.in / Karnataka Police (2023-2025),official_aggregate,707
+Dakshina Kannada,2024,Pocso,OpenCity.in / Karnataka Police (2023-2025),official_aggregate,68
+Dakshina Kannada,2024,Pocso Rape,OpenCity.in / Karnataka Police (2023-2025),official_aggregate,37
+Dakshina Kannada,2024,Rape,OpenCity.in / Karnataka Police (2023-2025),official_aggregate,8
+Dakshina Kannada,2024,Riots,OpenCity.in / Karnataka Police (2023-2025),official_aggregate,31
+Dakshina Kannada,2024,Robbery,OpenCity.in / Karnataka Police (2023-2025),official_aggregate,10
+Dakshina Kannada,2024,Sc/St,OpenCity.in / Karnataka Police (2023-2025),official_aggregate,27
+Dakshina Kannada,2024,Theft,OpenCity.in / Karnataka Police (2023-2025),official_aggregate,164
+Dakshina Kannada,2025,Total IPC,OpenCity.in / Karnataka Police (2023-2025),official_aggregate,1816
+Dakshina Kannada,2025,Total SLL,OpenCity.in / Karnataka Police (2023-2025),official_aggregate,417
+Davanagere,2023,Total IPC,OpenCity.in / Karnataka Police (2023-2025),official_aggregate,3755
+Davanagere,2023,Total SLL,OpenCity.in / Karnataka Police (2023-2025),official_aggregate,1170
+Davanagere,2024,Assault,OpenCity.in / Karnataka Police (2023-2025),official_aggregate,326
+Davanagere,2024,Attempt To Murder,OpenCity.in / Karnataka Police (2023-2025),official_aggregate,84
+Davanagere,2024,Burglary,OpenCity.in / Karnataka Police (2023-2025),official_aggregate,182
+Davanagere,2024,Cruelty By Husband,OpenCity.in / Karnataka Police (2023-2025),official_aggregate,59
+Davanagere,2024,Cyber Fraud,OpenCity.in / Karnataka Police (2023-2025),official_aggregate,143
+Davanagere,2024,Dacoity,OpenCity.in / Karnataka Police (2023-2025),official_aggregate,7
+Davanagere,2024,Dowry Deaths,OpenCity.in / Karnataka Police (2023-2025),official_aggregate,5
+Davanagere,2024,Dp Act,OpenCity.in / Karnataka Police (2023-2025),official_aggregate,72
+Davanagere,2024,Fatal Motor Accidents,OpenCity.in / Karnataka Police (2023-2025),official_aggregate,283
+Davanagere,2024,Gambling,OpenCity.in / Karnataka Police (2023-2025),official_aggregate,484
+Davanagere,2024,Molestation,OpenCity.in / Karnataka Police (2023-2025),official_aggregate,194
+Davanagere,2024,Murder,OpenCity.in / Karnataka Police (2023-2025),official_aggregate,27
+Davanagere,2024,Non-Fatal Motor Accidents,OpenCity.in / Karnataka Police (2023-2025),official_aggregate,746
+Davanagere,2024,Pocso,OpenCity.in / Karnataka Police (2023-2025),official_aggregate,107
+Davanagere,2024,Pocso Rape,OpenCity.in / Karnataka Police (2023-2025),official_aggregate,77
+Davanagere,2024,Rape,OpenCity.in / Karnataka Police (2023-2025),official_aggregate,24
+Davanagere,2024,Riots,OpenCity.in / Karnataka Police (2023-2025),official_aggregate,171
+Davanagere,2024,Robbery,OpenCity.in / Karnataka Police (2023-2025),official_aggregate,48
+Davanagere,2024,Sc/St,OpenCity.in / Karnataka Police (2023-2025),official_aggregate,62
+Davanagere,2024,Theft,OpenCity.in / Karnataka Police (2023-2025),official_aggregate,424
+Davanagere,2025,Total IPC,OpenCity.in / Karnataka Police (2023-2025),official_aggregate,3385
+Davanagere,2025,Total SLL,OpenCity.in / Karnataka Police (2023-2025),official_aggregate,1386
+Dharwad,2023,Total IPC,OpenCity.in / Karnataka Police (2023-2025),official_aggregate,1237
+Dharwad,2023,Total SLL,OpenCity.in / Karnataka Police (2023-2025),official_aggregate,571
+Dharwad,2024,Assault,OpenCity.in / Karnataka Police (2023-2025),official_aggregate,107
+Dharwad,2024,Attempt To Murder,OpenCity.in / Karnataka Police (2023-2025),official_aggregate,25
+Dharwad,2024,Burglary,OpenCity.in / Karnataka Police (2023-2025),official_aggregate,43
+Dharwad,2024,Cruelty By Husband,OpenCity.in / Karnataka Police (2023-2025),official_aggregate,22
+Dharwad,2024,Cyber Fraud,OpenCity.in / Karnataka Police (2023-2025),official_aggregate,68
+Dharwad,2024,Dacoity,OpenCity.in / Karnataka Police (2023-2025),official_aggregate,2
+Dharwad,2024,Dowry Deaths,OpenCity.in / Karnataka Police (2023-2025),official_aggregate,1
+Dharwad,2024,Dp Act,OpenCity.in / Karnataka Police (2023-2025),official_aggregate,1
+Dharwad,2024,Fatal Motor Accidents,OpenCity.in / Karnataka Police (2023-2025),official_aggregate,186
+Dharwad,2024,Gambling,OpenCity.in / Karnataka Police (2023-2025),official_aggregate,214
+Dharwad,2024,Molestation,OpenCity.in / Karnataka Police (2023-2025),official_aggregate,28
+Dharwad,2024,Murder,OpenCity.in / Karnataka Police (2023-2025),official_aggregate,19
+Dharwad,2024,Non-Fatal Motor Accidents,OpenCity.in / Karnataka Police (2023-2025),official_aggregate,285
+Dharwad,2024,Pocso,OpenCity.in / Karnataka Police (2023-2025),official_aggregate,46
+Dharwad,2024,Pocso Rape,OpenCity.in / Karnataka Police (2023-2025),official_aggregate,38
+Dharwad,2024,Rape,OpenCity.in / Karnataka Police (2023-2025),official_aggregate,6
+Dharwad,2024,Riots,OpenCity.in / Karnataka Police (2023-2025),official_aggregate,55
+Dharwad,2024,Robbery,OpenCity.in / Karnataka Police (2023-2025),official_aggregate,9
+Dharwad,2024,Sc/St,OpenCity.in / Karnataka Police (2023-2025),official_aggregate,35
+Dharwad,2024,Theft,OpenCity.in / Karnataka Police (2023-2025),official_aggregate,104
+Dharwad,2025,Total IPC,OpenCity.in / Karnataka Police (2023-2025),official_aggregate,1016
+Dharwad,2025,Total SLL,OpenCity.in / Karnataka Police (2023-2025),official_aggregate,625
+Gadag,2023,Total IPC,OpenCity.in / Karnataka Police (2023-2025),official_aggregate,1229
+Gadag,2023,Total SLL,OpenCity.in / Karnataka Police (2023-2025),official_aggregate,958
+Gadag,2024,Assault,OpenCity.in / Karnataka Police (2023-2025),official_aggregate,93
+Gadag,2024,Attempt To Murder,OpenCity.in / Karnataka Police (2023-2025),official_aggregate,24
+Gadag,2024,Burglary,OpenCity.in / Karnataka Police (2023-2025),official_aggregate,51
+Gadag,2024,Cruelty By Husband,OpenCity.in / Karnataka Police (2023-2025),official_aggregate,20
+Gadag,2024,Cyber Fraud,OpenCity.in / Karnataka Police (2023-2025),official_aggregate,70
+Gadag,2024,Dacoity,OpenCity.in / Karnataka Police (2023-2025),official_aggregate,0
+Gadag,2024,Dowry Deaths,OpenCity.in / Karnataka Police (2023-2025),official_aggregate,1
+Gadag,2024,Dp Act,OpenCity.in / Karnataka Police (2023-2025),official_aggregate,8
+Gadag,2024,Fatal Motor Accidents,OpenCity.in / Karnataka Police (2023-2025),official_aggregate,148
+Gadag,2024,Gambling,OpenCity.in / Karnataka Police (2023-2025),official_aggregate,440
+Gadag,2024,Molestation,OpenCity.in / Karnataka Police (2023-2025),official_aggregate,49
+Gadag,2024,Murder,OpenCity.in / Karnataka Police (2023-2025),official_aggregate,17
+Gadag,2024,Non-Fatal Motor Accidents,OpenCity.in / Karnataka Police (2023-2025),official_aggregate,164
+Gadag,2024,Pocso,OpenCity.in / Karnataka Police (2023-2025),official_aggregate,37
+Gadag,2024,Pocso Rape,OpenCity.in / Karnataka Police (2023-2025),official_aggregate,32
+Gadag,2024,Rape,OpenCity.in / Karnataka Police (2023-2025),official_aggregate,8
+Gadag,2024,Riots,OpenCity.in / Karnataka Police (2023-2025),official_aggregate,91
+Gadag,2024,Robbery,OpenCity.in / Karnataka Police (2023-2025),official_aggregate,8
+Gadag,2024,Sc/St,OpenCity.in / Karnataka Police (2023-2025),official_aggregate,38
+Gadag,2024,Theft,OpenCity.in / Karnataka Police (2023-2025),official_aggregate,169
+Gadag,2025,Total IPC,OpenCity.in / Karnataka Police (2023-2025),official_aggregate,1043
+Gadag,2025,Total SLL,OpenCity.in / Karnataka Police (2023-2025),official_aggregate,1225
+Hassan,2023,Total IPC,OpenCity.in / Karnataka Police (2023-2025),official_aggregate,5163
+Hassan,2023,Total SLL,OpenCity.in / Karnataka Police (2023-2025),official_aggregate,1200
+Hassan,2024,Assault,OpenCity.in / Karnataka Police (2023-2025),official_aggregate,899
+Hassan,2024,Attempt To Murder,OpenCity.in / Karnataka Police (2023-2025),official_aggregate,122
+Hassan,2024,Burglary,OpenCity.in / Karnataka Police (2023-2025),official_aggregate,210
+Hassan,2024,Cruelty By Husband,OpenCity.in / Karnataka Police (2023-2025),official_aggregate,89
+Hassan,2024,Cyber Fraud,OpenCity.in / Karnataka Police (2023-2025),official_aggregate,141
+Hassan,2024,Dacoity,OpenCity.in / Karnataka Police (2023-2025),official_aggregate,19
+Hassan,2024,Dowry Deaths,OpenCity.in / Karnataka Police (2023-2025),official_aggregate,6
+Hassan,2024,Dp Act,OpenCity.in / Karnataka Police (2023-2025),official_aggregate,65
+Hassan,2024,Fatal Motor Accidents,OpenCity.in / Karnataka Police (2023-2025),official_aggregate,459
+Hassan,2024,Gambling,OpenCity.in / Karnataka Police (2023-2025),official_aggregate,168
+Hassan,2024,Molestation,OpenCity.in / Karnataka Police (2023-2025),official_aggregate,234
+Hassan,2024,Murder,OpenCity.in / Karnataka Police (2023-2025),official_aggregate,44
+Hassan,2024,Non-Fatal Motor Accidents,OpenCity.in / Karnataka Police (2023-2025),official_aggregate,1757
+Hassan,2024,Pocso,OpenCity.in / Karnataka Police (2023-2025),official_aggregate,154
+Hassan,2024,Pocso Rape,OpenCity.in / Karnataka Police (2023-2025),official_aggregate,123
+Hassan,2024,Rape,OpenCity.in / Karnataka Police (2023-2025),official_aggregate,27
+Hassan,2024,Riots,OpenCity.in / Karnataka Police (2023-2025),official_aggregate,67
+Hassan,2024,Robbery,OpenCity.in / Karnataka Police (2023-2025),official_aggregate,47
+Hassan,2024,Sc/St,OpenCity.in / Karnataka Police (2023-2025),official_aggregate,93
+Hassan,2024,Theft,OpenCity.in / Karnataka Police (2023-2025),official_aggregate,396
+Hassan,2025,Total IPC,OpenCity.in / Karnataka Police (2023-2025),official_aggregate,4781
+Hassan,2025,Total SLL,OpenCity.in / Karnataka Police (2023-2025),official_aggregate,1366
+Haveri,2023,Total IPC,OpenCity.in / Karnataka Police (2023-2025),official_aggregate,2519
+Haveri,2023,Total SLL,OpenCity.in / Karnataka Police (2023-2025),official_aggregate,885
+Haveri,2024,Assault,OpenCity.in / Karnataka Police (2023-2025),official_aggregate,233
+Haveri,2024,Attempt To Murder,OpenCity.in / Karnataka Police (2023-2025),official_aggregate,56
+Haveri,2024,Burglary,OpenCity.in / Karnataka Police (2023-2025),official_aggregate,158
+Haveri,2024,Cruelty By Husband,OpenCity.in / Karnataka Police (2023-2025),official_aggregate,33
+Haveri,2024,Cyber Fraud,OpenCity.in / Karnataka Police (2023-2025),official_aggregate,130
+Haveri,2024,Dacoity,OpenCity.in / Karnataka Police (2023-2025),official_aggregate,4
+Haveri,2024,Dowry Deaths,OpenCity.in / Karnataka Police (2023-2025),official_aggregate,2
+Haveri,2024,Dp Act,OpenCity.in / Karnataka Police (2023-2025),official_aggregate,22
+Haveri,2024,Fatal Motor Accidents,OpenCity.in / Karnataka Police (2023-2025),official_aggregate,262
+Haveri,2024,Gambling,OpenCity.in / Karnataka Police (2023-2025),official_aggregate,475
+Haveri,2024,Molestation,OpenCity.in / Karnataka Police (2023-2025),official_aggregate,111
+Haveri,2024,Murder,OpenCity.in / Karnataka Police (2023-2025),official_aggregate,22
+Haveri,2024,Non-Fatal Motor Accidents,OpenCity.in / Karnataka Police (2023-2025),official_aggregate,568
+Haveri,2024,Pocso,OpenCity.in / Karnataka Police (2023-2025),official_aggregate,125
+Haveri,2024,Pocso Rape,OpenCity.in / Karnataka Police (2023-2025),official_aggregate,109
+Haveri,2024,Rape,OpenCity.in / Karnataka Police (2023-2025),official_aggregate,18
+Haveri,2024,Riots,OpenCity.in / Karnataka Police (2023-2025),official_aggregate,205
+Haveri,2024,Robbery,OpenCity.in / Karnataka Police (2023-2025),official_aggregate,14
+Haveri,2024,Sc/St,OpenCity.in / Karnataka Police (2023-2025),official_aggregate,48
+Haveri,2024,Theft,OpenCity.in / Karnataka Police (2023-2025),official_aggregate,470
+Haveri,2025,Total IPC,OpenCity.in / Karnataka Police (2023-2025),official_aggregate,2406
+Haveri,2025,Total SLL,OpenCity.in / Karnataka Police (2023-2025),official_aggregate,1155
+Hubballi-Dharwad,2023,Total IPC,OpenCity.in / Karnataka Police (2023-2025),official_aggregate,1776
+Hubballi-Dharwad,2023,Total SLL,OpenCity.in / Karnataka Police (2023-2025),official_aggregate,1289
+Hubballi-Dharwad,2024,Assault,OpenCity.in / Karnataka Police (2023-2025),official_aggregate,170
+Hubballi-Dharwad,2024,Attempt To Murder,OpenCity.in / Karnataka Police (2023-2025),official_aggregate,85
+Hubballi-Dharwad,2024,Burglary,OpenCity.in / Karnataka Police (2023-2025),official_aggregate,86
+Hubballi-Dharwad,2024,Cruelty By Husband,OpenCity.in / Karnataka Police (2023-2025),official_aggregate,95
+Hubballi-Dharwad,2024,Cyber Fraud,OpenCity.in / Karnataka Police (2023-2025),official_aggregate,247
+Hubballi-Dharwad,2024,Dacoity,OpenCity.in / Karnataka Police (2023-2025),official_aggregate,3
+Hubballi-Dharwad,2024,Dowry Deaths,OpenCity.in / Karnataka Police (2023-2025),official_aggregate,4
+Hubballi-Dharwad,2024,Dp Act,OpenCity.in / Karnataka Police (2023-2025),official_aggregate,0
+Hubballi-Dharwad,2024,Fatal Motor Accidents,OpenCity.in / Karnataka Police (2023-2025),official_aggregate,102
+Hubballi-Dharwad,2024,Gambling,OpenCity.in / Karnataka Police (2023-2025),official_aggregate,386
+Hubballi-Dharwad,2024,Molestation,OpenCity.in / Karnataka Police (2023-2025),official_aggregate,72
+Hubballi-Dharwad,2024,Murder,OpenCity.in / Karnataka Police (2023-2025),official_aggregate,22
+Hubballi-Dharwad,2024,Non-Fatal Motor Accidents,OpenCity.in / Karnataka Police (2023-2025),official_aggregate,334
+Hubballi-Dharwad,2024,Pocso,OpenCity.in / Karnataka Police (2023-2025),official_aggregate,63
+Hubballi-Dharwad,2024,Pocso Rape,OpenCity.in / Karnataka Police (2023-2025),official_aggregate,42
+Hubballi-Dharwad,2024,Rape,OpenCity.in / Karnataka Police (2023-2025),official_aggregate,20
+Hubballi-Dharwad,2024,Riots,OpenCity.in / Karnataka Police (2023-2025),official_aggregate,28
+Hubballi-Dharwad,2024,Robbery,OpenCity.in / Karnataka Police (2023-2025),official_aggregate,28
+Hubballi-Dharwad,2024,Sc/St,OpenCity.in / Karnataka Police (2023-2025),official_aggregate,47
+Hubballi-Dharwad,2024,Theft,OpenCity.in / Karnataka Police (2023-2025),official_aggregate,221
+Hubballi-Dharwad,2025,Total IPC,OpenCity.in / Karnataka Police (2023-2025),official_aggregate,1488
+Hubballi-Dharwad,2025,Total SLL,OpenCity.in / Karnataka Police (2023-2025),official_aggregate,1160
+K.G.F,2024,Assault,OpenCity.in / Karnataka Police (2023-2025),official_aggregate,150
+K.G.F,2024,Attempt To Murder,OpenCity.in / Karnataka Police (2023-2025),official_aggregate,32
+K.G.F,2024,Burglary,OpenCity.in / Karnataka Police (2023-2025),official_aggregate,76
+K.G.F,2024,Cruelty By Husband,OpenCity.in / Karnataka Police (2023-2025),official_aggregate,9
+K.G.F,2024,Cyber Fraud,OpenCity.in / Karnataka Police (2023-2025),official_aggregate,100
+K.G.F,2024,Dacoity,OpenCity.in / Karnataka Police (2023-2025),official_aggregate,0
+K.G.F,2024,Dowry Deaths,OpenCity.in / Karnataka Police (2023-2025),official_aggregate,1
+K.G.F,2024,Dp Act,OpenCity.in / Karnataka Police (2023-2025),official_aggregate,17
+K.G.F,2024,Fatal Motor Accidents,OpenCity.in / Karnataka Police (2023-2025),official_aggregate,65
+K.G.F,2024,Gambling,OpenCity.in / Karnataka Police (2023-2025),official_aggregate,18
+K.G.F,2024,Molestation,OpenCity.in / Karnataka Police (2023-2025),official_aggregate,43
+K.G.F,2024,Murder,OpenCity.in / Karnataka Police (2023-2025),official_aggregate,12
+K.G.F,2024,Non-Fatal Motor Accidents,OpenCity.in / Karnataka Police (2023-2025),official_aggregate,129
+K.G.F,2024,Pocso,OpenCity.in / Karnataka Police (2023-2025),official_aggregate,44
+K.G.F,2024,Pocso Rape,OpenCity.in / Karnataka Police (2023-2025),official_aggregate,35
+K.G.F,2024,Rape,OpenCity.in / Karnataka Police (2023-2025),official_aggregate,8
+K.G.F,2024,Riots,OpenCity.in / Karnataka Police (2023-2025),official_aggregate,10
+K.G.F,2024,Robbery,OpenCity.in / Karnataka Police (2023-2025),official_aggregate,6
+K.G.F,2024,Sc/St,OpenCity.in / Karnataka Police (2023-2025),official_aggregate,13
+K.G.F,2024,Theft,OpenCity.in / Karnataka Police (2023-2025),official_aggregate,87
+K.G.F,2025,Total IPC,OpenCity.in / Karnataka Police (2023-2025),official_aggregate,782
+K.G.F,2025,Total SLL,OpenCity.in / Karnataka Police (2023-2025),official_aggregate,360
+Kalaburagi,2024,Assault,OpenCity.in / Karnataka Police (2023-2025),official_aggregate,532
+Kalaburagi,2024,Attempt To Murder,OpenCity.in / Karnataka Police (2023-2025),official_aggregate,118
+Kalaburagi,2024,Burglary,OpenCity.in / Karnataka Police (2023-2025),official_aggregate,248
+Kalaburagi,2024,Cruelty By Husband,OpenCity.in / Karnataka Police (2023-2025),official_aggregate,158
+Kalaburagi,2024,Cyber Fraud,OpenCity.in / Karnataka Police (2023-2025),official_aggregate,78
+Kalaburagi,2024,Dacoity,OpenCity.in / Karnataka Police (2023-2025),official_aggregate,6
+Kalaburagi,2024,Dowry Deaths,OpenCity.in / Karnataka Police (2023-2025),official_aggregate,6
+Kalaburagi,2024,Dp Act,OpenCity.in / Karnataka Police (2023-2025),official_aggregate,75
+Kalaburagi,2024,Fatal Motor Accidents,OpenCity.in / Karnataka Police (2023-2025),official_aggregate,396
+Kalaburagi,2024,Gambling,OpenCity.in / Karnataka Police (2023-2025),official_aggregate,706
+Kalaburagi,2024,Molestation,OpenCity.in / Karnataka Police (2023-2025),official_aggregate,139
+Kalaburagi,2024,Murder,OpenCity.in / Karnataka Police (2023-2025),official_aggregate,55
+Kalaburagi,2024,Non-Fatal Motor Accidents,OpenCity.in / Karnataka Police (2023-2025),official_aggregate,925
+Kalaburagi,2024,Pocso,OpenCity.in / Karnataka Police (2023-2025),official_aggregate,88
+Kalaburagi,2024,Pocso Rape,OpenCity.in / Karnataka Police (2023-2025),official_aggregate,61
+Kalaburagi,2024,Rape,OpenCity.in / Karnataka Police (2023-2025),official_aggregate,37
+Kalaburagi,2024,Riots,OpenCity.in / Karnataka Police (2023-2025),official_aggregate,203
+Kalaburagi,2024,Robbery,OpenCity.in / Karnataka Police (2023-2025),official_aggregate,50
+Kalaburagi,2024,Sc/St,OpenCity.in / Karnataka Police (2023-2025),official_aggregate,98
+Kalaburagi,2024,Theft,OpenCity.in / Karnataka Police (2023-2025),official_aggregate,737
+Kalaburagi,2025,Total IPC,OpenCity.in / Karnataka Police (2023-2025),official_aggregate,4413
+Kalaburagi,2025,Total SLL,OpenCity.in / Karnataka Police (2023-2025),official_aggregate,2035
+Kalaburgi,2023,Total IPC,OpenCity.in / Karnataka Police (2023-2025),official_aggregate,2555
+Kalaburgi,2023,Total SLL,OpenCity.in / Karnataka Police (2023-2025),official_aggregate,1114
+Kalaburgi City,2023,Total IPC,OpenCity.in / Karnataka Police (2023-2025),official_aggregate,2112
+Kalaburgi City,2023,Total SLL,OpenCity.in / Karnataka Police (2023-2025),official_aggregate,629
+Kgf,2023,Total IPC,OpenCity.in / Karnataka Police (2023-2025),official_aggregate,836
+Kgf,2023,Total SLL,OpenCity.in / Karnataka Police (2023-2025),official_aggregate,506
+Kodagu,2023,Total IPC,OpenCity.in / Karnataka Police (2023-2025),official_aggregate,1576
+Kodagu,2023,Total SLL,OpenCity.in / Karnataka Police (2023-2025),official_aggregate,535
+Kodagu,2024,Assault,OpenCity.in / Karnataka Police (2023-2025),official_aggregate,274
+Kodagu,2024,Attempt To Murder,OpenCity.in / Karnataka Police (2023-2025),official_aggregate,37
+Kodagu,2024,Burglary,OpenCity.in / Karnataka Police (2023-2025),official_aggregate,84
+Kodagu,2024,Cruelty By Husband,OpenCity.in / Karnataka Police (2023-2025),official_aggregate,21
+Kodagu,2024,Cyber Fraud,OpenCity.in / Karnataka Police (2023-2025),official_aggregate,90
+Kodagu,2024,Dacoity,OpenCity.in / Karnataka Police (2023-2025),official_aggregate,2
+Kodagu,2024,Dowry Deaths,OpenCity.in / Karnataka Police (2023-2025),official_aggregate,0
+Kodagu,2024,Dp Act,OpenCity.in / Karnataka Police (2023-2025),official_aggregate,6
+Kodagu,2024,Fatal Motor Accidents,OpenCity.in / Karnataka Police (2023-2025),official_aggregate,82
+Kodagu,2024,Gambling,OpenCity.in / Karnataka Police (2023-2025),official_aggregate,32
+Kodagu,2024,Molestation,OpenCity.in / Karnataka Police (2023-2025),official_aggregate,55
+Kodagu,2024,Murder,OpenCity.in / Karnataka Police (2023-2025),official_aggregate,24
+Kodagu,2024,Non-Fatal Motor Accidents,OpenCity.in / Karnataka Police (2023-2025),official_aggregate,420
+Kodagu,2024,Pocso,OpenCity.in / Karnataka Police (2023-2025),official_aggregate,78
+Kodagu,2024,Pocso Rape,OpenCity.in / Karnataka Police (2023-2025),official_aggregate,59
+Kodagu,2024,Rape,OpenCity.in / Karnataka Police (2023-2025),official_aggregate,4
+Kodagu,2024,Riots,OpenCity.in / Karnataka Police (2023-2025),official_aggregate,5
+Kodagu,2024,Robbery,OpenCity.in / Karnataka Police (2023-2025),official_aggregate,8
+Kodagu,2024,Sc/St,OpenCity.in / Karnataka Police (2023-2025),official_aggregate,42
+Kodagu,2024,Theft,OpenCity.in / Karnataka Police (2023-2025),official_aggregate,108
+Kodagu,2025,Total IPC,OpenCity.in / Karnataka Police (2023-2025),official_aggregate,1724
+Kodagu,2025,Total SLL,OpenCity.in / Karnataka Police (2023-2025),official_aggregate,600
+Kolar,2023,Total IPC,OpenCity.in / Karnataka Police (2023-2025),official_aggregate,2552
+Kolar,2023,Total SLL,OpenCity.in / Karnataka Police (2023-2025),official_aggregate,628
+Kolar,2024,Assault,OpenCity.in / Karnataka Police (2023-2025),official_aggregate,356
+Kolar,2024,Attempt To Murder,OpenCity.in / Karnataka Police (2023-2025),official_aggregate,60
+Kolar,2024,Burglary,OpenCity.in / Karnataka Police (2023-2025),official_aggregate,94
+Kolar,2024,Cruelty By Husband,OpenCity.in / Karnataka Police (2023-2025),official_aggregate,26
+Kolar,2024,Cyber Fraud,OpenCity.in / Karnataka Police (2023-2025),official_aggregate,64
+Kolar,2024,Dacoity,OpenCity.in / Karnataka Police (2023-2025),official_aggregate,3
+Kolar,2024,Dowry Deaths,OpenCity.in / Karnataka Police (2023-2025),official_aggregate,5
+Kolar,2024,Dp Act,OpenCity.in / Karnataka Police (2023-2025),official_aggregate,17
+Kolar,2024,Fatal Motor Accidents,OpenCity.in / Karnataka Police (2023-2025),official_aggregate,260
+Kolar,2024,Gambling,OpenCity.in / Karnataka Police (2023-2025),official_aggregate,120
+Kolar,2024,Molestation,OpenCity.in / Karnataka Police (2023-2025),official_aggregate,90
+Kolar,2024,Murder,OpenCity.in / Karnataka Police (2023-2025),official_aggregate,28
+Kolar,2024,Non-Fatal Motor Accidents,OpenCity.in / Karnataka Police (2023-2025),official_aggregate,546
+Kolar,2024,Pocso,OpenCity.in / Karnataka Police (2023-2025),official_aggregate,103
+Kolar,2024,Pocso Rape,OpenCity.in / Karnataka Police (2023-2025),official_aggregate,86
+Kolar,2024,Rape,OpenCity.in / Karnataka Police (2023-2025),official_aggregate,3
+Kolar,2024,Riots,OpenCity.in / Karnataka Police (2023-2025),official_aggregate,100
+Kolar,2024,Robbery,OpenCity.in / Karnataka Police (2023-2025),official_aggregate,31
+Kolar,2024,Sc/St,OpenCity.in / Karnataka Police (2023-2025),official_aggregate,45
+Kolar,2024,Theft,OpenCity.in / Karnataka Police (2023-2025),official_aggregate,236
+Kolar,2025,Total IPC,OpenCity.in / Karnataka Police (2023-2025),official_aggregate,2245
+Kolar,2025,Total SLL,OpenCity.in / Karnataka Police (2023-2025),official_aggregate,505
+Koppal,2023,Total IPC,OpenCity.in / Karnataka Police (2023-2025),official_aggregate,1819
+Koppal,2023,Total SLL,OpenCity.in / Karnataka Police (2023-2025),official_aggregate,927
+Koppal,2024,Assault,OpenCity.in / Karnataka Police (2023-2025),official_aggregate,110
+Koppal,2024,Attempt To Murder,OpenCity.in / Karnataka Police (2023-2025),official_aggregate,39
+Koppal,2024,Burglary,OpenCity.in / Karnataka Police (2023-2025),official_aggregate,98
+Koppal,2024,Cruelty By Husband,OpenCity.in / Karnataka Police (2023-2025),official_aggregate,57
+Koppal,2024,Cyber Fraud,OpenCity.in / Karnataka Police (2023-2025),official_aggregate,38
+Koppal,2024,Dacoity,OpenCity.in / Karnataka Police (2023-2025),official_aggregate,6
+Koppal,2024,Dowry Deaths,OpenCity.in / Karnataka Police (2023-2025),official_aggregate,2
+Koppal,2024,Dp Act,OpenCity.in / Karnataka Police (2023-2025),official_aggregate,0
+Koppal,2024,Fatal Motor Accidents,OpenCity.in / Karnataka Police (2023-2025),official_aggregate,271
+Koppal,2024,Gambling,OpenCity.in / Karnataka Police (2023-2025),official_aggregate,623
+Koppal,2024,Molestation,OpenCity.in / Karnataka Police (2023-2025),official_aggregate,107
+Koppal,2024,Murder,OpenCity.in / Karnataka Police (2023-2025),official_aggregate,18
+Koppal,2024,Non-Fatal Motor Accidents,OpenCity.in / Karnataka Police (2023-2025),official_aggregate,392
+Koppal,2024,Pocso,OpenCity.in / Karnataka Police (2023-2025),official_aggregate,66
+Koppal,2024,Pocso Rape,OpenCity.in / Karnataka Police (2023-2025),official_aggregate,54
+Koppal,2024,Rape,OpenCity.in / Karnataka Police (2023-2025),official_aggregate,20
+Koppal,2024,Riots,OpenCity.in / Karnataka Police (2023-2025),official_aggregate,51
+Koppal,2024,Robbery,OpenCity.in / Karnataka Police (2023-2025),official_aggregate,10
+Koppal,2024,Sc/St,OpenCity.in / Karnataka Police (2023-2025),official_aggregate,58
+Koppal,2024,Theft,OpenCity.in / Karnataka Police (2023-2025),official_aggregate,218
+Koppal,2025,Total IPC,OpenCity.in / Karnataka Police (2023-2025),official_aggregate,1945
+Koppal,2025,Total SLL,OpenCity.in / Karnataka Police (2023-2025),official_aggregate,1255
+Krailways,2023,Total IPC,OpenCity.in / Karnataka Police (2023-2025),official_aggregate,928
+Krailways,2023,Total SLL,OpenCity.in / Karnataka Police (2023-2025),official_aggregate,95
+Mandya,2023,Total IPC,OpenCity.in / Karnataka Police (2023-2025),official_aggregate,4932
+Mandya,2023,Total SLL,OpenCity.in / Karnataka Police (2023-2025),official_aggregate,1032
+Mandya,2024,Assault,OpenCity.in / Karnataka Police (2023-2025),official_aggregate,603
+Mandya,2024,Attempt To Murder,OpenCity.in / Karnataka Police (2023-2025),official_aggregate,78
+Mandya,2024,Burglary,OpenCity.in / Karnataka Police (2023-2025),official_aggregate,169
+Mandya,2024,Cruelty By Husband,OpenCity.in / Karnataka Police (2023-2025),official_aggregate,65
+Mandya,2024,Cyber Fraud,OpenCity.in / Karnataka Police (2023-2025),official_aggregate,76
+Mandya,2024,Dacoity,OpenCity.in / Karnataka Police (2023-2025),official_aggregate,8
+Mandya,2024,Dowry Deaths,OpenCity.in / Karnataka Police (2023-2025),official_aggregate,4
+Mandya,2024,Dp Act,OpenCity.in / Karnataka Police (2023-2025),official_aggregate,38
+Mandya,2024,Fatal Motor Accidents,OpenCity.in / Karnataka Police (2023-2025),official_aggregate,500
+Mandya,2024,Gambling,OpenCity.in / Karnataka Police (2023-2025),official_aggregate,274
+Mandya,2024,Molestation,OpenCity.in / Karnataka Police (2023-2025),official_aggregate,227
+Mandya,2024,Murder,OpenCity.in / Karnataka Police (2023-2025),official_aggregate,26
+Mandya,2024,Non-Fatal Motor Accidents,OpenCity.in / Karnataka Police (2023-2025),official_aggregate,1598
+Mandya,2024,Pocso,OpenCity.in / Karnataka Police (2023-2025),official_aggregate,149
+Mandya,2024,Pocso Rape,OpenCity.in / Karnataka Police (2023-2025),official_aggregate,111
+Mandya,2024,Rape,OpenCity.in / Karnataka Police (2023-2025),official_aggregate,13
+Mandya,2024,Riots,OpenCity.in / Karnataka Police (2023-2025),official_aggregate,68
+Mandya,2024,Robbery,OpenCity.in / Karnataka Police (2023-2025),official_aggregate,34
+Mandya,2024,Sc/St,OpenCity.in / Karnataka Police (2023-2025),official_aggregate,67
+Mandya,2024,Theft,OpenCity.in / Karnataka Police (2023-2025),official_aggregate,344
+Mandya,2025,Total IPC,OpenCity.in / Karnataka Police (2023-2025),official_aggregate,4780
+Mandya,2025,Total SLL,OpenCity.in / Karnataka Police (2023-2025),official_aggregate,1150
+Mangaluru,2023,Total IPC,OpenCity.in / Karnataka Police (2023-2025),official_aggregate,2122
+Mangaluru,2023,Total SLL,OpenCity.in / Karnataka Police (2023-2025),official_aggregate,1276
+Mangaluru,2024,Assault,OpenCity.in / Karnataka Police (2023-2025),official_aggregate,187
+Mangaluru,2024,Attempt To Murder,OpenCity.in / Karnataka Police (2023-2025),official_aggregate,53
+Mangaluru,2024,Burglary,OpenCity.in / Karnataka Police (2023-2025),official_aggregate,54
+Mangaluru,2024,Cruelty By Husband,OpenCity.in / Karnataka Police (2023-2025),official_aggregate,20
+Mangaluru,2024,Cyber Fraud,OpenCity.in / Karnataka Police (2023-2025),official_aggregate,149
+Mangaluru,2024,Dacoity,OpenCity.in / Karnataka Police (2023-2025),official_aggregate,3
+Mangaluru,2024,Dowry Deaths,OpenCity.in / Karnataka Police (2023-2025),official_aggregate,0
+Mangaluru,2024,Dp Act,OpenCity.in / Karnataka Police (2023-2025),official_aggregate,39
+Mangaluru,2024,Fatal Motor Accidents,OpenCity.in / Karnataka Police (2023-2025),official_aggregate,169
+Mangaluru,2024,Gambling,OpenCity.in / Karnataka Police (2023-2025),official_aggregate,217
+Mangaluru,2024,Molestation,OpenCity.in / Karnataka Police (2023-2025),official_aggregate,81
+Mangaluru,2024,Murder,OpenCity.in / Karnataka Police (2023-2025),official_aggregate,10
+Mangaluru,2024,Non-Fatal Motor Accidents,OpenCity.in / Karnataka Police (2023-2025),official_aggregate,854
+Mangaluru,2024,Pocso,OpenCity.in / Karnataka Police (2023-2025),official_aggregate,63
+Mangaluru,2024,Pocso Rape,OpenCity.in / Karnataka Police (2023-2025),official_aggregate,29
+Mangaluru,2024,Rape,OpenCity.in / Karnataka Police (2023-2025),official_aggregate,23
+Mangaluru,2024,Riots,OpenCity.in / Karnataka Police (2023-2025),official_aggregate,14
+Mangaluru,2024,Robbery,OpenCity.in / Karnataka Police (2023-2025),official_aggregate,19
+Mangaluru,2024,Sc/St,OpenCity.in / Karnataka Police (2023-2025),official_aggregate,18
+Mangaluru,2024,Theft,OpenCity.in / Karnataka Police (2023-2025),official_aggregate,206
+Mangaluru,2025,Total IPC,OpenCity.in / Karnataka Police (2023-2025),official_aggregate,2278
+Mangaluru,2025,Total SLL,OpenCity.in / Karnataka Police (2023-2025),official_aggregate,1205
+Mysuru,2023,Total IPC,OpenCity.in / Karnataka Police (2023-2025),official_aggregate,2553
+Mysuru,2023,Total SLL,OpenCity.in / Karnataka Police (2023-2025),official_aggregate,716
+Mysuru,2024,Assault,OpenCity.in / Karnataka Police (2023-2025),official_aggregate,1159
+Mysuru,2024,Attempt To Murder,OpenCity.in / Karnataka Police (2023-2025),official_aggregate,103
+Mysuru,2024,Burglary,OpenCity.in / Karnataka Police (2023-2025),official_aggregate,337
+Mysuru,2024,Cruelty By Husband,OpenCity.in / Karnataka Police (2023-2025),official_aggregate,129
+Mysuru,2024,Cyber Fraud,OpenCity.in / Karnataka Police (2023-2025),official_aggregate,330
+Mysuru,2024,Dacoity,OpenCity.in / Karnataka Police (2023-2025),official_aggregate,2
+Mysuru,2024,Dowry Deaths,OpenCity.in / Karnataka Police (2023-2025),official_aggregate,8
+Mysuru,2024,Dp Act,OpenCity.in / Karnataka Police (2023-2025),official_aggregate,129
+Mysuru,2024,Fatal Motor Accidents,OpenCity.in / Karnataka Police (2023-2025),official_aggregate,603
+Mysuru,2024,Gambling,OpenCity.in / Karnataka Police (2023-2025),official_aggregate,207
+Mysuru,2024,Molestation,OpenCity.in / Karnataka Police (2023-2025),official_aggregate,311
+Mysuru,2024,Murder,OpenCity.in / Karnataka Police (2023-2025),official_aggregate,71
+Mysuru,2024,Non-Fatal Motor Accidents,OpenCity.in / Karnataka Police (2023-2025),official_aggregate,2570
+Mysuru,2024,Pocso,OpenCity.in / Karnataka Police (2023-2025),official_aggregate,203
+Mysuru,2024,Pocso Rape,OpenCity.in / Karnataka Police (2023-2025),official_aggregate,159
+Mysuru,2024,Rape,OpenCity.in / Karnataka Police (2023-2025),official_aggregate,39
+Mysuru,2024,Riots,OpenCity.in / Karnataka Police (2023-2025),official_aggregate,144
+Mysuru,2024,Robbery,OpenCity.in / Karnataka Police (2023-2025),official_aggregate,86
+Mysuru,2024,Sc/St,OpenCity.in / Karnataka Police (2023-2025),official_aggregate,68
+Mysuru,2024,Theft,OpenCity.in / Karnataka Police (2023-2025),official_aggregate,823
+Mysuru,2025,Total IPC,OpenCity.in / Karnataka Police (2023-2025),official_aggregate,7176
+Mysuru,2025,Total SLL,OpenCity.in / Karnataka Police (2023-2025),official_aggregate,1952
+Mysuru District,2023,Total IPC,OpenCity.in / Karnataka Police (2023-2025),official_aggregate,4542
+Mysuru District,2023,Total SLL,OpenCity.in / Karnataka Police (2023-2025),official_aggregate,882
+Raichur,2023,Total IPC,OpenCity.in / Karnataka Police (2023-2025),official_aggregate,2642
+Raichur,2023,Total SLL,OpenCity.in / Karnataka Police (2023-2025),official_aggregate,1445
+Raichur,2024,Assault,OpenCity.in / Karnataka Police (2023-2025),official_aggregate,267
+Raichur,2024,Attempt To Murder,OpenCity.in / Karnataka Police (2023-2025),official_aggregate,78
+Raichur,2024,Burglary,OpenCity.in / Karnataka Police (2023-2025),official_aggregate,99
+Raichur,2024,Cruelty By Husband,OpenCity.in / Karnataka Police (2023-2025),official_aggregate,117
+Raichur,2024,Cyber Fraud,OpenCity.in / Karnataka Police (2023-2025),official_aggregate,30
+Raichur,2024,Dacoity,OpenCity.in / Karnataka Police (2023-2025),official_aggregate,6
+Raichur,2024,Dowry Deaths,OpenCity.in / Karnataka Police (2023-2025),official_aggregate,2
+Raichur,2024,Dp Act,OpenCity.in / Karnataka Police (2023-2025),official_aggregate,65
+Raichur,2024,Fatal Motor Accidents,OpenCity.in / Karnataka Police (2023-2025),official_aggregate,318
+Raichur,2024,Gambling,OpenCity.in / Karnataka Police (2023-2025),official_aggregate,875
+Raichur,2024,Molestation,OpenCity.in / Karnataka Police (2023-2025),official_aggregate,178
+Raichur,2024,Murder,OpenCity.in / Karnataka Police (2023-2025),official_aggregate,39
+Raichur,2024,Non-Fatal Motor Accidents,OpenCity.in / Karnataka Police (2023-2025),official_aggregate,366
+Raichur,2024,Pocso,OpenCity.in / Karnataka Police (2023-2025),official_aggregate,92
+Raichur,2024,Pocso Rape,OpenCity.in / Karnataka Police (2023-2025),official_aggregate,81
+Raichur,2024,Rape,OpenCity.in / Karnataka Police (2023-2025),official_aggregate,20
+Raichur,2024,Riots,OpenCity.in / Karnataka Police (2023-2025),official_aggregate,214
+Raichur,2024,Robbery,OpenCity.in / Karnataka Police (2023-2025),official_aggregate,18
+Raichur,2024,Sc/St,OpenCity.in / Karnataka Police (2023-2025),official_aggregate,80
+Raichur,2024,Theft,OpenCity.in / Karnataka Police (2023-2025),official_aggregate,568
+Raichur,2025,Total IPC,OpenCity.in / Karnataka Police (2023-2025),official_aggregate,2813
+Raichur,2025,Total SLL,OpenCity.in / Karnataka Police (2023-2025),official_aggregate,1458
+Ramanagara,2023,Total IPC,OpenCity.in / Karnataka Police (2023-2025),official_aggregate,4163
+Ramanagara,2023,Total SLL,OpenCity.in / Karnataka Police (2023-2025),official_aggregate,1089
+Ramanagara,2024,Assault,OpenCity.in / Karnataka Police (2023-2025),official_aggregate,517
+Ramanagara,2024,Attempt To Murder,OpenCity.in / Karnataka Police (2023-2025),official_aggregate,69
+Ramanagara,2024,Burglary,OpenCity.in / Karnataka Police (2023-2025),official_aggregate,171
+Ramanagara,2024,Cruelty By Husband,OpenCity.in / Karnataka Police (2023-2025),official_aggregate,49
+Ramanagara,2024,Cyber Fraud,OpenCity.in / Karnataka Police (2023-2025),official_aggregate,242
+Ramanagara,2024,Dacoity,OpenCity.in / Karnataka Police (2023-2025),official_aggregate,13
+Ramanagara,2024,Dowry Deaths,OpenCity.in / Karnataka Police (2023-2025),official_aggregate,1
+Ramanagara,2024,Dp Act,OpenCity.in / Karnataka Police (2023-2025),official_aggregate,39
+Ramanagara,2024,Fatal Motor Accidents,OpenCity.in / Karnataka Police (2023-2025),official_aggregate,408
+Ramanagara,2024,Gambling,OpenCity.in / Karnataka Police (2023-2025),official_aggregate,107
+Ramanagara,2024,Molestation,OpenCity.in / Karnataka Police (2023-2025),official_aggregate,205
+Ramanagara,2024,Murder,OpenCity.in / Karnataka Police (2023-2025),official_aggregate,40
+Ramanagara,2024,Non-Fatal Motor Accidents,OpenCity.in / Karnataka Police (2023-2025),official_aggregate,1177
+Ramanagara,2024,Pocso,OpenCity.in / Karnataka Police (2023-2025),official_aggregate,116
+Ramanagara,2024,Pocso Rape,OpenCity.in / Karnataka Police (2023-2025),official_aggregate,96
+Ramanagara,2024,Rape,OpenCity.in / Karnataka Police (2023-2025),official_aggregate,10
+Ramanagara,2024,Riots,OpenCity.in / Karnataka Police (2023-2025),official_aggregate,36
+Ramanagara,2024,Robbery,OpenCity.in / Karnataka Police (2023-2025),official_aggregate,42
+Ramanagara,2024,Sc/St,OpenCity.in / Karnataka Police (2023-2025),official_aggregate,54
+Ramanagara,2024,Theft,OpenCity.in / Karnataka Police (2023-2025),official_aggregate,500
+Shimoga,2023,Total IPC,OpenCity.in / Karnataka Police (2023-2025),official_aggregate,4654
+Shimoga,2023,Total SLL,OpenCity.in / Karnataka Police (2023-2025),official_aggregate,1750
+Shivamogga,2024,Assault,OpenCity.in / Karnataka Police (2023-2025),official_aggregate,734
+Shivamogga,2024,Attempt To Murder,OpenCity.in / Karnataka Police (2023-2025),official_aggregate,144
+Shivamogga,2024,Burglary,OpenCity.in / Karnataka Police (2023-2025),official_aggregate,173
+Shivamogga,2024,Cruelty By Husband,OpenCity.in / Karnataka Police (2023-2025),official_aggregate,86
+Shivamogga,2024,Cyber Fraud,OpenCity.in / Karnataka Police (2023-2025),official_aggregate,136
+Shivamogga,2024,Dacoity,OpenCity.in / Karnataka Police (2023-2025),official_aggregate,11
+Shivamogga,2024,Dowry Deaths,OpenCity.in / Karnataka Police (2023-2025),official_aggregate,2
+Shivamogga,2024,Dp Act,OpenCity.in / Karnataka Police (2023-2025),official_aggregate,99
+Shivamogga,2024,Fatal Motor Accidents,OpenCity.in / Karnataka Police (2023-2025),official_aggregate,361
+Shivamogga,2024,Gambling,OpenCity.in / Karnataka Police (2023-2025),official_aggregate,419
+Shivamogga,2024,Molestation,OpenCity.in / Karnataka Police (2023-2025),official_aggregate,272
+Shivamogga,2024,Murder,OpenCity.in / Karnataka Police (2023-2025),official_aggregate,36
+Shivamogga,2024,Non-Fatal Motor Accidents,OpenCity.in / Karnataka Police (2023-2025),official_aggregate,1139
+Shivamogga,2024,Pocso,OpenCity.in / Karnataka Police (2023-2025),official_aggregate,220
+Shivamogga,2024,Pocso Rape,OpenCity.in / Karnataka Police (2023-2025),official_aggregate,173
+Shivamogga,2024,Rape,OpenCity.in / Karnataka Police (2023-2025),official_aggregate,17
+Shivamogga,2024,Riots,OpenCity.in / Karnataka Police (2023-2025),official_aggregate,180
+Shivamogga,2024,Robbery,OpenCity.in / Karnataka Police (2023-2025),official_aggregate,42
+Shivamogga,2024,Sc/St,OpenCity.in / Karnataka Police (2023-2025),official_aggregate,84
+Shivamogga,2024,Theft,OpenCity.in / Karnataka Police (2023-2025),official_aggregate,428
+Shivamogga,2025,Total IPC,OpenCity.in / Karnataka Police (2023-2025),official_aggregate,4840
+Shivamogga,2025,Total SLL,OpenCity.in / Karnataka Police (2023-2025),official_aggregate,2155
+Tumakuru,2023,Total IPC,OpenCity.in / Karnataka Police (2023-2025),official_aggregate,6440
+Tumakuru,2023,Total SLL,OpenCity.in / Karnataka Police (2023-2025),official_aggregate,1809
+Tumakuru,2024,Assault,OpenCity.in / Karnataka Police (2023-2025),official_aggregate,742
+Tumakuru,2024,Attempt To Murder,OpenCity.in / Karnataka Police (2023-2025),official_aggregate,130
+Tumakuru,2024,Burglary,OpenCity.in / Karnataka Police (2023-2025),official_aggregate,264
+Tumakuru,2024,Cruelty By Husband,OpenCity.in / Karnataka Police (2023-2025),official_aggregate,51
+Tumakuru,2024,Cyber Fraud,OpenCity.in / Karnataka Police (2023-2025),official_aggregate,331
+Tumakuru,2024,Dacoity,OpenCity.in / Karnataka Police (2023-2025),official_aggregate,14
+Tumakuru,2024,Dowry Deaths,OpenCity.in / Karnataka Police (2023-2025),official_aggregate,5
+Tumakuru,2024,Dp Act,OpenCity.in / Karnataka Police (2023-2025),official_aggregate,104
+Tumakuru,2024,Fatal Motor Accidents,OpenCity.in / Karnataka Police (2023-2025),official_aggregate,737
+Tumakuru,2024,Gambling,OpenCity.in / Karnataka Police (2023-2025),official_aggregate,514
+Tumakuru,2024,Molestation,OpenCity.in / Karnataka Police (2023-2025),official_aggregate,323
+Tumakuru,2024,Murder,OpenCity.in / Karnataka Police (2023-2025),official_aggregate,52
+Tumakuru,2024,Non-Fatal Motor Accidents,OpenCity.in / Karnataka Police (2023-2025),official_aggregate,1901
+Tumakuru,2024,Pocso,OpenCity.in / Karnataka Police (2023-2025),official_aggregate,174
+Tumakuru,2024,Pocso Rape,OpenCity.in / Karnataka Police (2023-2025),official_aggregate,131
+Tumakuru,2024,Rape,OpenCity.in / Karnataka Police (2023-2025),official_aggregate,33
+Tumakuru,2024,Riots,OpenCity.in / Karnataka Police (2023-2025),official_aggregate,53
+Tumakuru,2024,Robbery,OpenCity.in / Karnataka Police (2023-2025),official_aggregate,87
+Tumakuru,2024,Sc/St,OpenCity.in / Karnataka Police (2023-2025),official_aggregate,115
+Tumakuru,2024,Theft,OpenCity.in / Karnataka Police (2023-2025),official_aggregate,738
+Tumakuru,2025,Total IPC,OpenCity.in / Karnataka Police (2023-2025),official_aggregate,5961
+Tumakuru,2025,Total SLL,OpenCity.in / Karnataka Police (2023-2025),official_aggregate,2509
+Udupi,2023,Total IPC,OpenCity.in / Karnataka Police (2023-2025),official_aggregate,2444
+Udupi,2023,Total SLL,OpenCity.in / Karnataka Police (2023-2025),official_aggregate,877
+Udupi,2024,Assault,OpenCity.in / Karnataka Police (2023-2025),official_aggregate,248
+Udupi,2024,Attempt To Murder,OpenCity.in / Karnataka Police (2023-2025),official_aggregate,35
+Udupi,2024,Burglary,OpenCity.in / Karnataka Police (2023-2025),official_aggregate,91
+Udupi,2024,Cruelty By Husband,OpenCity.in / Karnataka Police (2023-2025),official_aggregate,63
+Udupi,2024,Cyber Fraud,OpenCity.in / Karnataka Police (2023-2025),official_aggregate,222
+Udupi,2024,Dacoity,OpenCity.in / Karnataka Police (2023-2025),official_aggregate,8
+Udupi,2024,Dowry Deaths,OpenCity.in / Karnataka Police (2023-2025),official_aggregate,0
+Udupi,2024,Dp Act,OpenCity.in / Karnataka Police (2023-2025),official_aggregate,11
+Udupi,2024,Fatal Motor Accidents,OpenCity.in / Karnataka Police (2023-2025),official_aggregate,225
+Udupi,2024,Gambling,OpenCity.in / Karnataka Police (2023-2025),official_aggregate,114
+Udupi,2024,Molestation,OpenCity.in / Karnataka Police (2023-2025),official_aggregate,65
+Udupi,2024,Murder,OpenCity.in / Karnataka Police (2023-2025),official_aggregate,6
+Udupi,2024,Non-Fatal Motor Accidents,OpenCity.in / Karnataka Police (2023-2025),official_aggregate,990
+Udupi,2024,Pocso,OpenCity.in / Karnataka Police (2023-2025),official_aggregate,60
+Udupi,2024,Pocso Rape,OpenCity.in / Karnataka Police (2023-2025),official_aggregate,35
+Udupi,2024,Rape,OpenCity.in / Karnataka Police (2023-2025),official_aggregate,13
+Udupi,2024,Riots,OpenCity.in / Karnataka Police (2023-2025),official_aggregate,37
+Udupi,2024,Robbery,OpenCity.in / Karnataka Police (2023-2025),official_aggregate,16
+Udupi,2024,Sc/St,OpenCity.in / Karnataka Police (2023-2025),official_aggregate,43
+Udupi,2024,Theft,OpenCity.in / Karnataka Police (2023-2025),official_aggregate,312
+Udupi,2025,Total IPC,OpenCity.in / Karnataka Police (2023-2025),official_aggregate,2249
+Udupi,2025,Total SLL,OpenCity.in / Karnataka Police (2023-2025),official_aggregate,752
+Uttara Kannada,2023,Total IPC,OpenCity.in / Karnataka Police (2023-2025),official_aggregate,2460
+Uttara Kannada,2023,Total SLL,OpenCity.in / Karnataka Police (2023-2025),official_aggregate,1035
+Uttara Kannada,2024,Assault,OpenCity.in / Karnataka Police (2023-2025),official_aggregate,389
+Uttara Kannada,2024,Attempt To Murder,OpenCity.in / Karnataka Police (2023-2025),official_aggregate,52
+Uttara Kannada,2024,Burglary,OpenCity.in / Karnataka Police (2023-2025),official_aggregate,99
+Uttara Kannada,2024,Cruelty By Husband,OpenCity.in / Karnataka Police (2023-2025),official_aggregate,42
+Uttara Kannada,2024,Cyber Fraud,OpenCity.in / Karnataka Police (2023-2025),official_aggregate,109
+Uttara Kannada,2024,Dacoity,OpenCity.in / Karnataka Police (2023-2025),official_aggregate,4
+Uttara Kannada,2024,Dowry Deaths,OpenCity.in / Karnataka Police (2023-2025),official_aggregate,0
+Uttara Kannada,2024,Dp Act,OpenCity.in / Karnataka Police (2023-2025),official_aggregate,18
+Uttara Kannada,2024,Fatal Motor Accidents,OpenCity.in / Karnataka Police (2023-2025),official_aggregate,248
+Uttara Kannada,2024,Gambling,OpenCity.in / Karnataka Police (2023-2025),official_aggregate,349
+Uttara Kannada,2024,Molestation,OpenCity.in / Karnataka Police (2023-2025),official_aggregate,221
+Uttara Kannada,2024,Murder,OpenCity.in / Karnataka Police (2023-2025),official_aggregate,17
+Uttara Kannada,2024,Non-Fatal Motor Accidents,OpenCity.in / Karnataka Police (2023-2025),official_aggregate,727
+Uttara Kannada,2024,Pocso,OpenCity.in / Karnataka Police (2023-2025),official_aggregate,81
+Uttara Kannada,2024,Pocso Rape,OpenCity.in / Karnataka Police (2023-2025),official_aggregate,60
+Uttara Kannada,2024,Rape,OpenCity.in / Karnataka Police (2023-2025),official_aggregate,12
+Uttara Kannada,2024,Riots,OpenCity.in / Karnataka Police (2023-2025),official_aggregate,75
+Uttara Kannada,2024,Robbery,OpenCity.in / Karnataka Police (2023-2025),official_aggregate,13
+Uttara Kannada,2024,Sc/St,OpenCity.in / Karnataka Police (2023-2025),official_aggregate,51
+Uttara Kannada,2024,Theft,OpenCity.in / Karnataka Police (2023-2025),official_aggregate,184
+Uttara Kannada,2025,Total IPC,OpenCity.in / Karnataka Police (2023-2025),official_aggregate,2334
+Uttara Kannada,2025,Total SLL,OpenCity.in / Karnataka Police (2023-2025),official_aggregate,1596
+Vijayanagara,2023,Total IPC,OpenCity.in / Karnataka Police (2023-2025),official_aggregate,1837
+Vijayanagara,2023,Total SLL,OpenCity.in / Karnataka Police (2023-2025),official_aggregate,1341
+Vijayanagara,2024,Assault,OpenCity.in / Karnataka Police (2023-2025),official_aggregate,158
+Vijayanagara,2024,Attempt To Murder,OpenCity.in / Karnataka Police (2023-2025),official_aggregate,59
+Vijayanagara,2024,Burglary,OpenCity.in / Karnataka Police (2023-2025),official_aggregate,63
+Vijayanagara,2024,Cruelty By Husband,OpenCity.in / Karnataka Police (2023-2025),official_aggregate,71
+Vijayanagara,2024,Cyber Fraud,OpenCity.in / Karnataka Police (2023-2025),official_aggregate,28
+Vijayanagara,2024,Dacoity,OpenCity.in / Karnataka Police (2023-2025),official_aggregate,1
+Vijayanagara,2024,Dowry Deaths,OpenCity.in / Karnataka Police (2023-2025),official_aggregate,2
+Vijayanagara,2024,Dp Act,OpenCity.in / Karnataka Police (2023-2025),official_aggregate,14
+Vijayanagara,2024,Fatal Motor Accidents,OpenCity.in / Karnataka Police (2023-2025),official_aggregate,205
+Vijayanagara,2024,Gambling,OpenCity.in / Karnataka Police (2023-2025),official_aggregate,688
+Vijayanagara,2024,Molestation,OpenCity.in / Karnataka Police (2023-2025),official_aggregate,111
+Vijayanagara,2024,Murder,OpenCity.in / Karnataka Police (2023-2025),official_aggregate,19
+Vijayanagara,2024,Non-Fatal Motor Accidents,OpenCity.in / Karnataka Police (2023-2025),official_aggregate,358
+Vijayanagara,2024,Pocso,OpenCity.in / Karnataka Police (2023-2025),official_aggregate,75
+Vijayanagara,2024,Pocso Rape,OpenCity.in / Karnataka Police (2023-2025),official_aggregate,65
+Vijayanagara,2024,Rape,OpenCity.in / Karnataka Police (2023-2025),official_aggregate,13
+Vijayanagara,2024,Riots,OpenCity.in / Karnataka Police (2023-2025),official_aggregate,86
+Vijayanagara,2024,Robbery,OpenCity.in / Karnataka Police (2023-2025),official_aggregate,11
+Vijayanagara,2024,Sc/St,OpenCity.in / Karnataka Police (2023-2025),official_aggregate,27
+Vijayanagara,2024,Theft,OpenCity.in / Karnataka Police (2023-2025),official_aggregate,215
+Vijayanagara,2025,Total IPC,OpenCity.in / Karnataka Police (2023-2025),official_aggregate,1781
+Vijayanagara,2025,Total SLL,OpenCity.in / Karnataka Police (2023-2025),official_aggregate,1467
+Vijayapur,2024,Assault,OpenCity.in / Karnataka Police (2023-2025),official_aggregate,367
+Vijayapur,2024,Attempt To Murder,OpenCity.in / Karnataka Police (2023-2025),official_aggregate,99
+Vijayapur,2024,Burglary,OpenCity.in / Karnataka Police (2023-2025),official_aggregate,133
+Vijayapur,2024,Cruelty By Husband,OpenCity.in / Karnataka Police (2023-2025),official_aggregate,103
+Vijayapur,2024,Cyber Fraud,OpenCity.in / Karnataka Police (2023-2025),official_aggregate,86
+Vijayapur,2024,Dacoity,OpenCity.in / Karnataka Police (2023-2025),official_aggregate,5
+Vijayapur,2024,Dowry Deaths,OpenCity.in / Karnataka Police (2023-2025),official_aggregate,2
+Vijayapur,2024,Dp Act,OpenCity.in / Karnataka Police (2023-2025),official_aggregate,7
+Vijayapur,2024,Fatal Motor Accidents,OpenCity.in / Karnataka Police (2023-2025),official_aggregate,417
+Vijayapur,2024,Gambling,OpenCity.in / Karnataka Police (2023-2025),official_aggregate,584
+Vijayapur,2024,Molestation,OpenCity.in / Karnataka Police (2023-2025),official_aggregate,122
+Vijayapur,2024,Murder,OpenCity.in / Karnataka Police (2023-2025),official_aggregate,63
+Vijayapur,2024,Non-Fatal Motor Accidents,OpenCity.in / Karnataka Police (2023-2025),official_aggregate,569
+Vijayapur,2024,Pocso,OpenCity.in / Karnataka Police (2023-2025),official_aggregate,96
+Vijayapur,2024,Pocso Rape,OpenCity.in / Karnataka Police (2023-2025),official_aggregate,71
+Vijayapur,2024,Rape,OpenCity.in / Karnataka Police (2023-2025),official_aggregate,32
+Vijayapur,2024,Riots,OpenCity.in / Karnataka Police (2023-2025),official_aggregate,124
+Vijayapur,2024,Robbery,OpenCity.in / Karnataka Police (2023-2025),official_aggregate,11
+Vijayapur,2024,Sc/St,OpenCity.in / Karnataka Police (2023-2025),official_aggregate,92
+Vijayapur,2024,Theft,OpenCity.in / Karnataka Police (2023-2025),official_aggregate,350
+Vijayapur,2025,Total IPC,OpenCity.in / Karnataka Police (2023-2025),official_aggregate,3062
+Vijayapur,2025,Total SLL,OpenCity.in / Karnataka Police (2023-2025),official_aggregate,1992
+Vijayapura,2023,Total IPC,OpenCity.in / Karnataka Police (2023-2025),official_aggregate,3103
+Vijayapura,2023,Total SLL,OpenCity.in / Karnataka Police (2023-2025),official_aggregate,1403
+Yadgir,2024,Assault,OpenCity.in / Karnataka Police (2023-2025),official_aggregate,210
+Yadgir,2024,Attempt To Murder,OpenCity.in / Karnataka Police (2023-2025),official_aggregate,53
+Yadgir,2024,Burglary,OpenCity.in / Karnataka Police (2023-2025),official_aggregate,55
+Yadgir,2024,Cruelty By Husband,OpenCity.in / Karnataka Police (2023-2025),official_aggregate,46
+Yadgir,2024,Cyber Fraud,OpenCity.in / Karnataka Police (2023-2025),official_aggregate,23
+Yadgir,2024,Dacoity,OpenCity.in / Karnataka Police (2023-2025),official_aggregate,0
+Yadgir,2024,Dowry Deaths,OpenCity.in / Karnataka Police (2023-2025),official_aggregate,0
+Yadgir,2024,Dp Act,OpenCity.in / Karnataka Police (2023-2025),official_aggregate,18
+Yadgir,2024,Fatal Motor Accidents,OpenCity.in / Karnataka Police (2023-2025),official_aggregate,153
+Yadgir,2024,Gambling,OpenCity.in / Karnataka Police (2023-2025),official_aggregate,470
+Yadgir,2024,Molestation,OpenCity.in / Karnataka Police (2023-2025),official_aggregate,128
+Yadgir,2024,Murder,OpenCity.in / Karnataka Police (2023-2025),official_aggregate,22
+Yadgir,2024,Non-Fatal Motor Accidents,OpenCity.in / Karnataka Police (2023-2025),official_aggregate,286
+Yadgir,2024,Pocso,OpenCity.in / Karnataka Police (2023-2025),official_aggregate,50
+Yadgir,2024,Pocso Rape,OpenCity.in / Karnataka Police (2023-2025),official_aggregate,44
+Yadgir,2024,Rape,OpenCity.in / Karnataka Police (2023-2025),official_aggregate,16
+Yadgir,2024,Riots,OpenCity.in / Karnataka Police (2023-2025),official_aggregate,145
+Yadgir,2024,Robbery,OpenCity.in / Karnataka Police (2023-2025),official_aggregate,1
+Yadgir,2024,Sc/St,OpenCity.in / Karnataka Police (2023-2025),official_aggregate,53
+Yadgir,2024,Theft,OpenCity.in / Karnataka Police (2023-2025),official_aggregate,195
+Yadgir,2025,Total IPC,OpenCity.in / Karnataka Police (2023-2025),official_aggregate,1622
+Yadgir,2025,Total SLL,OpenCity.in / Karnataka Police (2023-2025),official_aggregate,1093
+Yadgiri,2023,Total IPC,OpenCity.in / Karnataka Police (2023-2025),official_aggregate,1442
+Yadgiri,2023,Total SLL,OpenCity.in / Karnataka Police (2023-2025),official_aggregate,799

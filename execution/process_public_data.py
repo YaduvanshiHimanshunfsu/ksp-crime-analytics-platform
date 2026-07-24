@@ -134,10 +134,85 @@ def process_kaggle_trends() -> Path:
     return out
 
 
+def process_district_trends_2023_to_2025() -> Path:
+    """Process multi-year district trends from OpenCity.in data."""
+    records = []
+
+    # 1. 2023 Data
+    src_2023 = DATASET_ROOT / "OpenCity.in Karnataka Crime Data 2025/2023/ffce2bf3-1202-489d-8af5-f156c2e9b793.csv"
+    if src_2023.exists():
+        df_23 = pd.read_csv(src_2023)
+        df_23 = df_23[df_23["Districts"].str.strip().str.lower() != "total"].copy()
+        for _, row in df_23.iterrows():
+            dist = row["Districts"]
+            records.append({"district_raw": dist, "year": 2023, "crime_head": "Total IPC", "cases_reported": int(row["IPC Cases"])})
+            records.append({"district_raw": dist, "year": 2023, "crime_head": "Total SLL", "cases_reported": int(row["SLL Cases"])})
+
+    # 2. 2024 Data
+    src_2024 = DATASET_ROOT / "OpenCity.in Karnataka Crime Data 2025/2024/district wise.csv"
+    if src_2024.exists():
+        df_24 = pd.read_csv(src_2024)
+        df_24 = df_24[df_24["Sl No"].notna() & (df_24["DISTRICT/UNITS"] != "STATE")].copy()
+        map_24 = {
+            "THEFT": "Theft", "BURGLARY-DAY": "Burglary", "BURGLARY-NIGHT": "Burglary",
+            "CYBER CRIME": "Cyber Fraud", "CASES OF HURT": "Assault", "ROBBERY": "Robbery",
+            "MURDER": "Murder"
+        }
+        cols = [c for c in df_24.columns if c not in ("Sl No", "DISTRICT/UNITS")]
+        for _, row in df_24.iterrows():
+            dist = row["DISTRICT/UNITS"]
+            for c in cols:
+                val = row[c]
+                if pd.isna(val): val = 0
+                ch = map_24.get(str(c).strip(), str(c).strip().title())
+                records.append({"district_raw": dist, "year": 2024, "crime_head": ch, "cases_reported": int(val)})
+
+    # 3. 2025 Data
+    src_2025 = DATASET_ROOT / "OpenCity.in Karnataka Crime Data 2025/ka-district-wise-2025.csv"
+    if src_2025.exists():
+        df_25 = pd.read_csv(src_2025)
+        df_25.columns = ["sl_no", "district_unit", "ipc_bns_crimes", "sll_crimes"]
+        df_25 = df_25[df_25["sl_no"].notna() & (df_25["district_unit"] != "STATE")].copy()
+        for _, row in df_25.iterrows():
+            dist = row["district_unit"]
+            val_ipc = pd.to_numeric(row["ipc_bns_crimes"], errors="coerce")
+            val_sll = pd.to_numeric(row["sll_crimes"], errors="coerce")
+            records.append({"district_raw": dist, "year": 2025, "crime_head": "Total IPC", "cases_reported": int(val_ipc) if not pd.isna(val_ipc) else 0})
+            records.append({"district_raw": dist, "year": 2025, "crime_head": "Total SLL", "cases_reported": int(val_sll) if not pd.isna(val_sll) else 0})
+
+    if not records:
+        print("WARNING: No data for 2023-2025 trends")
+        return None
+
+    df = pd.DataFrame(records)
+    
+    def normalize_district(d):
+        d_title = str(d).strip().title()
+        # Fallback to existing mapping logic
+        if d_title in DISTRICT_NORM:
+            return DISTRICT_NORM[d_title]
+        # Also try exact match just in case
+        if d in DISTRICT_NORM:
+            return DISTRICT_NORM[d]
+        return d_title
+
+    df["district_normalized"] = df["district_raw"].apply(normalize_district)
+    df["data_source"] = "OpenCity.in / Karnataka Police (2023-2025)"
+    df["data_classification"] = "official_aggregate"
+    
+    df = df.groupby(["district_normalized", "year", "crime_head", "data_source", "data_classification"], as_index=False)["cases_reported"].sum()
+    
+    out = PROCESSED_DIR / "karnataka_district_trends_2023_2025.csv"
+    df.to_csv(out, index=False)
+    print(f"[trends]   Wrote {len(df)} trend records -> {out}")
+    return out
+
+
 def main() -> None:
     print("Processing public datasets for KSP Drishti...")
     out1 = process_district_data()
     out2 = process_kaggle_trends()
+    out3 = process_district_trends_2023_to_2025()
 
     print("\nSummary:")
     if out1:
@@ -146,6 +221,9 @@ def main() -> None:
     if out2:
         t = pd.read_csv(out2)
         print(f"  Category trends: {len(t)} monthly records, years = {sorted(t['period_start'].str[:4].unique())}")
+    if out3:
+        td = pd.read_csv(out3)
+        print(f"  District trends: {len(td)} records, years = {sorted(td['year'].unique())}")
     print("\nDone. Re-start the backend to serve updated public-context endpoints.")
 
 

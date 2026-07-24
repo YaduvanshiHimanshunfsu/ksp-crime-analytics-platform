@@ -148,7 +148,7 @@ def main() -> None:
     parser = argparse.ArgumentParser()
     parser.add_argument("--output", default=str(PROJECT_ROOT / "data" / "synthetic" / "cases.csv"))
     parser.add_argument("--seed", type=int, default=20260723)
-    parser.add_argument("--start", default="2025-07-01")
+    parser.add_argument("--start", default="2023-01-01")
     parser.add_argument("--end", default="2026-07-22")
     args = parser.parse_args()
     rows = make_cases(args.seed, date.fromisoformat(args.start), date.fromisoformat(args.end))

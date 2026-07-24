@@ -9,7 +9,7 @@ from fastapi import FastAPI, HTTPException
 from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel, Field
 
-from app.services import analytics
+import app.services as analytics
 
 
 logging.basicConfig(level=logging.INFO, format="%(asctime)s | %(levelname)s | %(name)s | %(message)s")
@@ -81,6 +81,31 @@ def get_risk_forecast(district: str | None = None, crime_head: str | None = None
     return analytics.risk_forecast(district, crime_head)
 
 
+@app.get("/api/v1/model-card")
+def get_model_card():
+    import json
+    from pathlib import Path
+    try:
+        metrics_path = Path("data/models/risk_model_metrics.json")
+        if metrics_path.exists():
+            metrics = json.loads(metrics_path.read_text())
+            metrics["prohibited_use"] = "Individual risk scoring, arrest decisions, automated deployment"
+            metrics["explainability"] = "SHAP TreeExplainer (per-prediction feature attribution)"
+            metrics["data_sources"] = {
+                "training": "Synthetic FIR-style demonstration data",
+                "calibration": "Karnataka Police / OpenCity.in 2025 (official aggregate)"
+            }
+            return metrics
+    except Exception:
+        pass
+    return {"error": "Model metrics not found. Train the model first."}
+
+
+@app.get("/api/v1/calibration-report")
+def get_calibration_report():
+    return analytics.calibration_report()
+
+
 @app.get("/api/v1/network")
 def get_network():
     return analytics.network()
@@ -136,6 +161,24 @@ def get_public_trends():
 def get_public_districts():
     """District-wise comparison from public data."""
     return analytics.public_district_comparison()
+
+
+@app.get("/api/v1/district-benchmark")
+def get_district_benchmark():
+    """Real KSP 2025 district volumes."""
+    return analytics.district_benchmark()
+
+
+@app.get("/api/v1/district-trends")
+def get_district_trends():
+    """Multi-year district trend data."""
+    return analytics.category_trend()
+
+
+@app.get("/api/v1/public-context/state-summary")
+def get_state_summary():
+    """State-level totals with attribution."""
+    return analytics.public_overview()
 
 
 # ---------------------------------------------------------------------------
