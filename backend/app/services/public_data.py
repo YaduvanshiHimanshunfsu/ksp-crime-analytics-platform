@@ -56,7 +56,7 @@ def public_overview() -> dict[str, Any]:
         }
     return {
         "available": True,
-        "total_records": int(len(df)),
+        "total_records": len(df),
         "districts": sorted(df["district"].unique().tolist()) if "district" in df.columns else [],
         "date_range": {
             "start": str(df["period_start"].min().date()) if "period_start" in df.columns else "N/A",
@@ -100,7 +100,7 @@ def public_district_comparison() -> list[dict[str, Any]]:
         .reset_index()
         .sort_values("cases_reported", ascending=False)
     )
-    return comparison.to_dict(orient="records")
+    return [{"district": str(r["district"]), "cases_reported": int(r["cases_reported"])} for r in comparison.to_dict(orient="records")]
 
 
 def calibration_report() -> dict[str, Any]:
@@ -119,15 +119,15 @@ def calibration_report() -> dict[str, Any]:
     real_dist = real.set_index("drishti_district")["total_crimes"]
     real_dist = real_dist / real_dist.sum()
     
-    correlation = synth_dist.corr(real_dist)
-    if pd.isna(correlation):
-        correlation = 0.0
+    correlation_value = float(synth_dist.corr(real_dist))
+    if pd.isna(correlation_value):
+        correlation_value = 0.0
         
     return {
         "status": "calibrated",
         "synthetic_total": len(synthetic),
         "real_total_2025": int(real["total_crimes"].sum()),
         "scale_factor": round(real["total_crimes"].sum() / max(len(synthetic), 1), 2),
-        "district_correlation": float(correlation),
+        "district_correlation": correlation_value,
         "interpretation": "Synthetic data represents a scaled-down simulation of the true distribution. A high correlation (>0.7) means the synthetic data matches the geographical spread of real crimes."
     }
